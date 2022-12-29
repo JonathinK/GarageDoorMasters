@@ -7,7 +7,7 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
-exports.createPages = async ({ actions }) => {
+/* exports.createPages = async ({ actions }) => {
   const { createPage } = actions
   createPage({
     path: "/using-dsg",
@@ -16,3 +16,4 @@ exports.createPages = async ({ actions }) => {
     defer: true,
   })
 }
+ */
