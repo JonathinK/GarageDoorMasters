@@ -84,6 +84,7 @@ module.exports = {
             : "cdn.contentful.com",
         environment:
           process.env.NODE_ENV === "development" ? "preview" : "master",
+          ...process.env.NODE_ENV === 'development' ? { deliveryToken: undefined } : {},
       },
     },
   ],
