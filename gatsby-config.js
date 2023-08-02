@@ -8,7 +8,7 @@ console.log(process.env);
 module.exports = {
   siteMetadata: {
     title: `Garage Door Masters`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Garage Door Masters are your one stop shop for all of your Residential and Commercial garage door needs. From broken springs to new doors,"we do it all". We service monmouth and ocean counties`,
     author: `@DiamondDigitalServices`,
     canonical: `https://garagedoormastersllc.com/`,
     phone:`(732)-870-7313`,
