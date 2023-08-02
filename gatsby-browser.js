@@ -1,7 +1,25 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
- */
+const React = require('react');
+const { ThemeProvider } = require("styled-components");
+const { default: Layout } = require("./src/components/layout");
+const { GlobalStyles } = require("./src/styles/Global.styled");
+const { mainTheme } = require("./src/themes/Theme");
 
-// You can delete this file if you're not using it
+// Makes the theme available to the entire application
+//Also in the future i will implement a feature to change the theme to lighter colors
+exports.wrapRootElement = ({ element }) => {
+  return(
+    <ThemeProvider theme={mainTheme}>
+      {element}
+    </ThemeProvider>
+  )
+}
+//Wraps every page with layout
+exports.wrapPageElement = ({ element, props}) => {
+  return(
+    <Layout {...props}>
+      <GlobalStyles/>
+      {element}
+    </Layout>
+  )
+}
+

@@ -1,21 +1,44 @@
 /**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
-
-/**
  * @type {import('gatsby').GatsbyConfig}
  */
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+console.log(process.env);
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Garage Door Masters`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    author: `@DiamondDigitalServices`,
+    canonical: `https://garagedoormastersllc.com/`,
+    phone:`(732)-870-7313`,
+    navigationLinks: [
+      {name: "Residential", link:"/residential"},
+      {name: "Commercial", link:"/commercial"},
+      {name: "About", link:"/about-us"},
+      {name: "Service Areas", link:"/areas-we-service"},
+      {name: "Gallery", link:"/gallery"},
+      {name: "Reviews", link:"/reviews"},
+      {name: "Contact", link:"/contact"},
+    ],
+    businessLicense:`#13vh07144300`,
+    businessHours:[
+      {day: "Monday", time: "8:00AM - 6:00PM"},
+      {day: "Tuesday", time: "8:00AM - 6:00PM"},
+      {day: "Wednesday", time: "8:00AM - 6:00PM"},
+      {day: "Thursday", time: "8:00AM - 6:00PM"},
+      {day: "Friday", time: "8:00AM - 6:00PM"},
+      {day: "Saturday", time: "8:00AM - 1:00PM"},
+    ],
+    socialLinks: [
+      {name: "facebook", url: 'https://www.facebook.com/GarageDoorMastersNJ/'},
+      {name:"google", url:"https://www.google.com/search?hl=en-US&gl=us&q=Garage+Door+Masters+LLC&ludocid=17006289284884916486lsig=AB86z5X6wawVTNhGumXYMzkFxxUn#lrd=0x89c183dc3f7acdb1:0xec027a005d18e906,3C"},
+      {name: "networkx", url: 'https://www.networx.com/c.garage-door-masters-llc'}
+    ],
   },
   plugins: [
     `gatsby-plugin-image`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,7 +59,31 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/Logo.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken:
+          process.env.NODE_ENV === "development"
+            ? process.env.CONTENTFUL_PREVIEW_API_TOKEN
+            : process.env.CONTENTFUL_DELIVERY_API_TOKEN,
+        host:
+          process.env.NODE_ENV === "development"
+            ? "preview.contentful.com"
+            : "cdn.contentful.com",
+        environment:
+          process.env.NODE_ENV === "development" ? "preview" : "master",
       },
     },
   ],

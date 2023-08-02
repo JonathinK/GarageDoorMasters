@@ -17,6 +17,7 @@ function Seo({ description, title, children }) {
             title
             description
             author
+            canonical
           }
         }
       }
@@ -25,11 +26,15 @@ function Seo({ description, title, children }) {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+  const defaultCanonical = site.siteMetadata.canonical
+
+  const canonicalLink = canonical || defaultCanonical
 
   return (
     <>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
       <meta name="description" content={metaDescription} />
+      {canonicalLink && <link rel="canonical" href={canonicalLink}/>}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
