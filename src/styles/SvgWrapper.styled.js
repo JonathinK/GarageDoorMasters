@@ -96,13 +96,12 @@ ${props => props.CardIcon && css`
   }
 `}
 ${props => props.navigationSvg && css` 
-  background:transparent;
   justify-self: start;
   align-self: start;
   height:100%;
   max-height: 100%;
   position: relative;
-  z-index: 51;
+  z-index: 52;
   
   &.flipped{
     background: transparent;

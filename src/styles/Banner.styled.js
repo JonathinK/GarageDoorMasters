@@ -75,7 +75,7 @@ export const BannerImage = styled.div`
  
   }
   @media ${({theme}) => theme.sizes.mobile}{
-    height: 50vh;
+    height: 60vh;
   }
 `
 export const BannerTitleBlock = styled.div`

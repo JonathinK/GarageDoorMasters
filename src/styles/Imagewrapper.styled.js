@@ -616,7 +616,7 @@ export const ImageWrapper = styled.div`
       align-self: stretch;
       height:100%;
       width:100%;
-      z-index: 50;
+      z-index: 51;
       opacity: .1;
       
 

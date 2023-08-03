@@ -75,6 +75,7 @@ export const Hamburger = styled.button`
   align-items:center;
   cursor: pointer;
   gap:.25em 0;
+  border: none;
   border-radius: .25em;
   background: ${({theme}) => theme.colors.primaryblue};
   box-shadow: 0px 4px 4px rgba(0,0,0,.22),
@@ -84,7 +85,7 @@ export const Hamburger = styled.button`
   div{
     background: ${({theme}) => theme.colors.white};
     width: 60%;
-    height: 4px;
+    height: 2px;
     border-radius: .5em;
   }
   div:first-child{
@@ -93,7 +94,10 @@ export const Hamburger = styled.button`
   div:last-child{
     width:40%;
   }
-  
+  @media ${({theme}) => theme.sizes.mobile}{
+    width: 2em;
+    height: 2em;
+  }
 `
 export const MobileSlideOut = styled.div`
 /*Default styles */
@@ -116,7 +120,7 @@ export const MobileSlideOut = styled.div`
   /* Socials Wrapper Import */
     ${SocialsWrapper}{
       position: relative;
-      z-index:51;
+      z-index:53;
     }
 
   
@@ -133,7 +137,7 @@ export const MobileSlideOut = styled.div`
       height: 2.5em;
       background: ${({theme}) => theme.colors.accentred};
       position: absolute;
-      z-index: 52;
+      z-index: 53;
       top:0;
       right: 0;
       transform: translate(-2em, 2em);
@@ -192,6 +196,23 @@ export const MobileSlideOut = styled.div`
     width:100%;
   ${SocialsWrapper}{
     gap:2em;
+  }
+  & .close{
+      width: 2em;
+      height: 2em;
+
+      :before, :after{
+        left: .85em;
+        top: .5em;
+        height: 1em;
+        width: .15em;
+      }
+      :before{
+       transform: rotate(45deg) translate(2%, 2%);
+      }
+      :after{
+        transform: rotate(-45deg) translate(2%, 2%);
+      }
   }
  }
 `

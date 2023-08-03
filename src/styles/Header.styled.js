@@ -6,7 +6,7 @@ import { SocialsWrapper } from "./SocialLinks.styled";
 export const HeaderContainer = styled.header`
   display:grid;
   grid-template-columns: inherit;
-  grid-template-rows: ${({scrolled}) => (scrolled ? '48px 80px':'48px 96px')};
+  grid-template-rows: 48px 96px;
   gap: .5em 2em;
   background: transparent;
   position: fixed;
@@ -22,8 +22,10 @@ export const HeaderContainer = styled.header`
     grid-template-rows: 48px 64px;
   }@media ${({theme}) => theme.sizes.mobile}{
     gap: .5em .5em;
-    grid-template-rows: 48px 56px;
+    grid-template-rows: 48px 40px;
+    background: ${({theme}) => theme.colors.primaryblue};
   } 
+
   :before{
     position:absolute;
     height: 100%;
@@ -113,17 +115,16 @@ export const ContactWrapper = styled.div`
 export const Branding = styled.div`
   grid-row: 2/3;
   grid-column: 2/3;
-  width:auto;
+  justify-self: center;
+  align-self:flex-start;
   
   &.logo{
-     
+       
   }
 `
 //Logo and Company Name go here
 export const LogoWrapper = styled.div`
   width: 96px;
-  justify-self:center;
-  align-self:center;
   
   @media ${({theme}) => theme.sizes.desktop}{
     width: 96px;
@@ -132,6 +133,6 @@ export const LogoWrapper = styled.div`
   }@media ${({theme}) => theme.sizes.tablet}{
     width: 64px;
   }@media ${({theme}) => theme.sizes.mobile}{
-    width: 56px;
+    width: 40px;
   }
 `
