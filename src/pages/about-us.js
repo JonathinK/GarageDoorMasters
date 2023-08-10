@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Banner, RightCompanySection, AboutGdmSection, ContactUsSection, AssuranceSection, BigTextSection} from '../components';
+import Seo from '../components/seo';
+
 const AboutUs = ({ data }) => {
  const BannerData = data.contentfulPage.banner;
  const Sections = data.contentfulPage.section;
@@ -29,6 +31,12 @@ const AboutUs = ({ data }) => {
 }
 
 export default AboutUs;
+export const Head = ({ data }) => <Seo
+  title={data.contentfulPage.seoMetadata.seoTitle}
+  description={data.contentfulPage.seoMetadata.description}
+  canonical={data.contentfulPage.seoMetadata.canonical}
+  keywords={data.contentfulPage.seoMetadata.keywords}
+/> 
 
 export const query = graphql`
   query {

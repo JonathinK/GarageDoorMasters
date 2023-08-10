@@ -29,7 +29,6 @@ export const ReviewsPanel = ({section}) => {
                 <ExternalLink 
                   href='https://www.facebook.com/GarageDoorMastersNJ/'
                   ButtonLink
-                  className='alt'
                 >
                   Review us on Facebook
                 </ExternalLink>

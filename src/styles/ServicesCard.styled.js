@@ -1,4 +1,5 @@
 import styled,{css} from "styled-components";
+import { SubTitle } from "./Typography";
 
 export const ServiceCard = styled.div`
   background: ${({theme}) => theme.colors.white};
@@ -32,7 +33,9 @@ export const ServiceCard = styled.div`
     align-items:center;
     text-align: center;
     padding: 1em;
-    gap: 0em 1.5em;
+    gap:1em 1.5em;
+    height: auto;
+    min-width: 260px;
   }
   @media ${({theme}) => theme.sizes.mobile}{
    flex-flow: column nowrap; 
@@ -78,12 +81,20 @@ export const ServiceCard = styled.div`
     @media ${({theme}) => theme.sizes.tablet}{ 
       align-items: flex-start;
       justify-content: space-between;
+      text-align:left;
       padding: 2.5em; 
       gap:1em 1em;   
       flex-flow: row wrap;
     }
     @media ${({theme}) => theme.sizes.mobile}{
-      
+      padding: 1.5em;
+      align-items: center;
+      justify-content: center;
+      text-align:center;
+      ${SubTitle}{
+        text-align:center;
+        width:100%;
+      }
     }
   `} 
   `

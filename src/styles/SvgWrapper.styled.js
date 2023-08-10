@@ -101,7 +101,7 @@ ${props => props.navigationSvg && css`
   height:100%;
   max-height: 100%;
   position: relative;
-  z-index: 52;
+  z-index: 55;
   
   &.flipped{
     background: transparent;
@@ -109,10 +109,11 @@ ${props => props.navigationSvg && css`
     width:100%;
     height:100%;
     position: relative;
+    z-index: 55;
     top:0;
     bottom:0;
     justify-self: end;
-    align-self:end;
+    align-self: end;
   }
   @media ${({theme}) => theme.sizes.tablet}{
     max-height: 200px;

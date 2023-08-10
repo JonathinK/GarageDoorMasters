@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Hero, HomePageAbout, ProductsList, HomepageServices, HomepageServicesCards, RightCompanySection, HomepageReviews} from '../components';
+import { Hero, HomePageAbout, ProductsList, HomepageServices, HomepageServicesCards, RightCompanySection, HomepageReviews, ContactUsSection} from '../components';
+import Seo from '../components/seo';
 
 const HomePage = ({ data }) => {
   const HeroData = data.contentfulLandingPage.hero;
@@ -22,6 +23,8 @@ const HomePage = ({ data }) => {
           return <RightCompanySection section={section} key={section.contentful_id} isHomepage={true}/>
         case "Landing Page: Reviews":
           return <HomepageReviews section={section} key={section.contentful_id}/>
+        case 'Section: Contact Us Section':
+          return <ContactUsSection section={section} key={section.contentful_id}/>
         default:
           return null
       }
@@ -30,6 +33,12 @@ const HomePage = ({ data }) => {
   )
 }
 
+export const Head = ({ data }) => <Seo
+  title={data.contentfulLandingPage.seoMetadata.seoTitle}
+  description={data.contentfulLandingPage.seoMetadata.description}
+  canonical={data.contentfulLandingPage.seoMetadata.canonical}
+  keywords={data.contentfulLandingPage.seoMetadata.keywords}
+/> 
 export const query = graphql`
   query {
     contentfulLandingPage {
@@ -73,6 +82,7 @@ export const query = graphql`
         ...HomepageServicesCards
         ...RightCompanySection
         ...SocialProof
+        ...ContactUsSection
       }
     }
   }

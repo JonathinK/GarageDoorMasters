@@ -21,7 +21,7 @@ export const Navigation = () => {
   return(
    <>
     <DesktopNav data={data}/>
-    <MobileNav data={data}  />
+    <MobileNav data={data}/>
    </>
   )
 }

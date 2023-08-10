@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import { Banner, CommercialOpeningSection, CommercialServices, ImagesPanel, TrustPros, ContactUsSection } from '../components';
+import Seo from '../components/seo';
 
 
 
@@ -31,7 +32,12 @@ const Commercial = ({ data }) => {
   )
 }
 export default Commercial;
-
+export const Head = ({ data }) => <Seo
+  title={data.contentfulPage.seoMetadata.seoTitle}
+  description={data.contentfulPage.seoMetadata.description}
+  canonical={data.contentfulPage.seoMetadata.canonical}
+  keywords={data.contentfulPage.seoMetadata.keywords}
+/> 
 export const query = graphql`
   query {
     contentfulPage (internalName: {eq: "Commercial-Garage-Door-Services"}) {

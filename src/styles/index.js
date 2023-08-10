@@ -150,3 +150,14 @@ export {
   ReviewCard,
   ReviewCardWrapper
 } from './ReviewCard.styled';
+
+export {
+  PaginationWrapper
+} from "./Pagination.styled";
+
+export{
+  LightboxContainer,
+  LightBox,
+  LightBoxImage,
+  Close
+} from './Lightbox.styled';

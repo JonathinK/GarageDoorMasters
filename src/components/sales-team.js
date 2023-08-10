@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Headline, ImageWrapper, Section, TextWrapper } from '../styles';
+import { Headline, Section, TextWrapper } from '../styles';
 import { DoorBuilder } from '.';
 import { TextBlockRender } from './text-block-render';
 
@@ -28,7 +28,7 @@ export const SalesTeam = ({ section }) => {
         return(
           <TextWrapper key={component.contentful_id}
             TextAlignCenter
-            XLC='5/11' LC="5/11" MC="2/10" SC="2/8" XSC="2/6"
+            XLC='5/11' LC="4/12" MC="2/10" SC="2/8" XSC="2/6"
             XLR='1/2'  LR="1/2"  MR="1/2"  SR="1/2" XSR="1/2"
           >
             <Headline>{component.headline}</Headline>

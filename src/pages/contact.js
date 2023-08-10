@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { Banner, ContactComponent } from '../components';
 import { MapIframe, Section } from '../styles';
-
+import Seo from '../components/seo';
 
 const ContactPage = ({ data }) => {
   const BannerData = data.contentfulPage.banner;
@@ -35,7 +35,12 @@ const ContactPage = ({ data }) => {
   )
 }
 export default ContactPage
-
+export const Head = ({ data }) => <Seo
+  title={data.contentfulPage.seoMetadata.seoTitle}
+  description={data.contentfulPage.seoMetadata.description}
+  canonical={data.contentfulPage.seoMetadata.canonical}
+  keywords={data.contentfulPage.seoMetadata.keywords}
+/> 
 export const query = graphql`
   query {
     contentfulPage (internalName: {eq: "Contact Us"}) {

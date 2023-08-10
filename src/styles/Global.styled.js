@@ -26,5 +26,9 @@ export const GlobalStyles = createGlobalStyle`
     background-position: center;      
     background-attachment: fixed;
     background-blend-mode: color-dodge; 
+
+    @media ${({theme}) => theme.sizes.mobile}{
+      margin-top: 96px;
+    }
   }
 `

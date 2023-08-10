@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 
 export const PageTitle = styled.h1`
   font-family: ${({theme}) => theme.fonts.headline};
-  font-display:swap;
   font-size: ${({theme}) => theme.fontSize.kilo};
   font-weight: ${({theme}) => theme.fontweight.bold};
   color: ${({theme}) => theme.colors.white};
@@ -19,7 +18,6 @@ export const PageTitle = styled.h1`
 `
 export const Headline = styled.h2`
   font-family: ${({theme}) => theme.fonts.headline};
-  font-display: swap;
   font-size: ${({theme}) => theme.fontSize.h2};
   line-height: ${({theme}) => theme.lineheight.dense};
   font-weight: ${({theme}) => theme.fontweight.medium};
@@ -74,7 +72,6 @@ export const Headline = styled.h2`
 `
 export const SubTitle = styled.h5`
   font-family: ${({theme}) => theme.fonts.headline};
-  font-display:swap;
   font-size: ${({theme}) => theme.fontSize.h5};
   color: ${({theme}) => theme.colors.grey};
 
@@ -129,7 +126,6 @@ export const SubTitle = styled.h5`
 `
 export const Kicker = styled.p`
   font-family: ${({theme}) => theme.fonts.mono};
-  font-display:swap;
   font-size: ${({theme}) => theme.fontSize.milli};
   color: ${({theme}) => theme.colors.white};
   text-transform: ${({theme}) => theme.fontCasing.upper};
@@ -152,7 +148,6 @@ export const Kicker = styled.p`
 export const TextBlock = styled.div`
  
   p{
-    font-display:swap;
     color:${({theme}) => theme.colors.lightgrey};
     font-family: ${({theme}) => theme.fonts.body};
     font-size: ${({theme}) => theme.fontSize.milli};
@@ -240,7 +235,6 @@ export const ExternalLink = styled.a`
   text-decoration:none;
   color: black;
   font-family: ${({theme}) => theme.fonts.body};
-  font-display:swap;
 
   ${props => props.BuilderLink && css` 
     
@@ -275,11 +269,16 @@ export const ExternalLink = styled.a`
 //Link component for internal routes using gatsby's route link api
 export const ButtonLink = styled(Link)`
     display:block;
-
+    font-size: ${({theme}) => theme.fontSize.milli};
+    @media ${({theme}) => theme.sizes.tablet}{
+      font-size: ${({theme}) => theme.fontSize.micro};
+    }
+    @media ${({theme}) => theme.sizes.mobile}{
+      font-size: ${({theme}) => theme.fontSize.nano};
+    }
   ${props => props.primary && css`
     font-family: ${({theme}) => theme.fonts.mono};
     font-weight: ${({theme}) => theme.fontweight.bold};
-    font-size: ${({theme}) => theme.fontSize.micro};
     line-height: ${({theme}) => theme.lineheight.dense};
     letter-spacing: ${({theme}) => theme.letterSpacing.normal};
     color: ${({theme}) => theme.colors.white};   
@@ -289,7 +288,6 @@ export const ButtonLink = styled(Link)`
   ${props => props.secondary && css`
     font-family: ${({theme}) => theme.fonts.mono};
     font-weight: ${({theme}) => theme.fontweight.bold};
-    font-size: ${({theme}) => theme.fontSize.micro};
     line-height: ${({theme}) => theme.lineheight.dense};
     letter-spacing: ${({theme}) => theme.letterSpacing.normal};
     color: ${({theme}) => theme.colors.white};   
@@ -299,7 +297,6 @@ export const ButtonLink = styled(Link)`
   ${props => props.outline && css`
     font-family: ${({theme}) => theme.fonts.mono};
     font-weight: ${({theme}) => theme.fontweight.bold};
-    font-size: ${({theme}) => theme.fontSize.micro};
     line-height: ${({theme}) => theme.lineheight.dense};
     letter-spacing: ${({theme}) => theme.letterSpacing.normal};
     color: ${({theme}) => theme.colors.white};   

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { ContactUsSection, Banner, ResidentialDamagedSprings, ResidentialBrokenSpringSymptoms, ResidentialLearningTheSystem } from '../components';
+import Seo from '../components/seo';
 
 const ResidentialSpringRepair = ({ data }) => {
   const SpringRepairBanner = data.contentfulPage.banner;
@@ -27,7 +28,12 @@ const ResidentialSpringRepair = ({ data }) => {
   )
 }
 export default ResidentialSpringRepair
-
+export const Head = ({ data }) => <Seo
+  title={data.contentfulPage.seoMetadata.seoTitle}
+  description={data.contentfulPage.seoMetadata.description}
+  canonical={data.contentfulPage.seoMetadata.canonical}
+  keywords={data.contentfulPage.seoMetadata.keywords}
+/> 
 export const query = graphql`
   query {
     contentfulPage(internalName: {eq: "Residential Garage Door Spring Repair"}) {

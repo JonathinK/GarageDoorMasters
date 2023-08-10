@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 export const DoorBuilder = ({ content }) => {
   return(
     <ProductsWrapper DoorBuilder
-      XLC="2/14" LC="2/14" MC="2/10" SC="2/8" XSC="2/6"
+      XLC="3/13" LC="3/13" MC="2/10" SC="2/8" XSC="2/6"
       XLR="3/4"  LR="3/4"  MR="3/4" SR="3/4" XSR="3/4"
     >
       {content.map((builder) => {

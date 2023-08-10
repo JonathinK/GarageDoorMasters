@@ -143,7 +143,9 @@ export const CardsWrapper = styled.div`
       gap:2.5em;
       grid-column: 2/8;
       grid-row: 2/3;
-      flex-flow: column nowrap;
+      flex-flow: row wrap;
+      justify-content:center;
+      align-items:center;
     }
   @media ${({theme}) => theme.sizes.mobile}{
       grid-column: 2/6;

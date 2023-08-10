@@ -3,12 +3,13 @@
  */
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
+
 module.exports = {
   siteMetadata: {
     title: `Garage Door Masters`,
     description: `Garage Door Masters are your one stop shop for all of your Residential and Commercial garage door needs. From broken springs to new doors,"we do it all". We service monmouth and ocean counties`,
-    author: `@DiamondDigitalServices`,
+    author: `DiamondDigitalServices`,
     canonical: `https://garagedoormastersllc.com/`,
     phone:`(732)-870-7313`,
     navigationLinks: [
@@ -21,6 +22,7 @@ module.exports = {
       {name: "Contact", link:"/contact"},
     ],
     businessLicense:`#13vh07144300`,
+    businessEmail:`gdoormasters@gmail.com`,
     businessHours:[
       {day: "Monday", time: "8:00AM - 6:00PM"},
       {day: "Tuesday", time: "8:00AM - 6:00PM"},
@@ -34,6 +36,8 @@ module.exports = {
       {name:"google", url:"https://www.google.com/search?hl=en-US&gl=us&q=Garage+Door+Masters+LLC&ludocid=17006289284884916486lsig=AB86z5X6wawVTNhGumXYMzkFxxUn#lrd=0x89c183dc3f7acdb1:0xec027a005d18e906,3C"},
       {name: "networkx", url: 'https://www.networx.com/c.garage-door-masters-llc'}
     ],
+    bbbProof: 'https://www.bbb.org/us/nj/brick/profile/garage-doors/garage-door-masters-llc-0221-90197097'
+    
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -93,8 +97,6 @@ module.exports = {
             ? "preview.contentful.com"
             : "cdn.contentful.com",
         environment:'preview',
-         /*  process.env.NODE_ENV === "development" ? "preview" : "master",
-          ...process.env.NODE_ENV === 'development' ? { deliveryToken: undefined } : {}, */
       },
     },
   ],

@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { Banner } from '../components';
 import { ResidentialOpeningStatement, ResidentialServicesCards, ContactUsSection } from '../components';
+import Seo from '../components/seo';
 
 const ResidentialPage = ({ data }) => {
   const BannerData = data.contentfulPage.banner;
@@ -25,6 +26,13 @@ const ResidentialPage = ({ data }) => {
   )
 }
 export default ResidentialPage
+
+export const Head = ({ data }) => <Seo
+  title={data.contentfulPage.seoMetadata.seoTitle}
+  description={data.contentfulPage.seoMetadata.description}
+  canonical={data.contentfulPage.seoMetadata.canonical}
+  keywords={data.contentfulPage.seoMetadata.keywords}
+/> 
 
 export const query = graphql`
   query {

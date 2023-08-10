@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { FooterBottomBar, FooterContainer, FooterInfoContainer, FooterLink, FooterText, FooterTitle, HoursContainer, PaymentsContainer, FooterFlex } from '../styles';
+import { FooterBottomBar, FooterContainer, FooterLink, FooterText, HoursContainer,  FooterFlex, SvgWrapper, ImageWrapper, TextWrapper, Headline, SubTitle, NavLink } from '../styles';
 import { StaticImage } from 'gatsby-plugin-image';
-import { ContentfulIcon, GatsbyIcon } from '../styles/Icons.styled';
 import { SocialLinks } from '../components/social-links';
+import FooterSvg from '../svg/assets/main-wave.svg';
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -12,11 +12,18 @@ const Footer = () => {
         siteMetadata {
           businessLicense
           phone
+          title
+          author
+          businessEmail
           businessHours {
             day
             time
           }
-          title
+          navigationLinks{
+            name
+            link
+          }
+          bbbProof
         }
       }
     }
@@ -25,72 +32,164 @@ const Footer = () => {
   const companyName = data.site.siteMetadata.title;
   const contactNumber = data.site.siteMetadata.phone;
   const operationHours = data.site.siteMetadata.businessHours;
+  const contactEmail = data.site.siteMetadata.businessEmail;
+  const siteAuthor = data.site.siteMetadata.author;
+  const footerLinks = data.site.siteMetadata.navigationLinks;
+  const bbbLink = data.site.siteMetadata.bbbProof;
 
   
   return(
     <FooterContainer>
-    <FooterFlex MainFooterFlex>
-      <FooterInfoContainer>
-        <div className="logo-wrapper">
+    {/*Svg Container*/}
+      <SvgWrapper
+      XLC="1/15"
+      XLR="1/2"
+      LC="1/15"
+      LR="1/2"
+      MC="1/11"
+      MR="1/2"
+      SC="1/9"
+      SR="1/2"
+      XSC="1/7"
+      XSR="1/2"
+      > 
+        <FooterSvg/>
+      </SvgWrapper>
+
+    {/*Logo Wrapper*/}
+      <ImageWrapper
+        XLC="7/9"
+        XLR='1/2'
+        LC="7/9"
+        LR="1/2"
+        MC="5/7"
+        MR="1/2"
+        SC="3/7"
+        SR="1/2"
+        XSC="3/5"
+        XSR="1/2"
+        FooterLogo
+      >
+      <NavLink to="/" title='Homepage Link'>
+        <StaticImage
+          src="../images/Logo.png"
+          alt="Garage Door Masters Logo"
+          layout="fullWidth"
+          quality={70}
+          placeholder='blurred'
+        />
+      </NavLink>
+      </ImageWrapper>
+
+    {/*Headline Text Wrapper */}
+      <TextWrapper
+        XLC="4/12"
+        XLR="2/3"
+        LC="4/12"
+        LR="2/3"
+        MC="3/9"
+        MR="2/3"
+        SC="2/8"
+        SR="2/3"
+        XSC="2/6"
+        XSR="2/3"
+        FlexCenter
+        TextAlignCenter
+      >
+        <SocialLinks/>
+        <Headline>{companyName}</Headline>
+        <SubTitle variant="primary">Install & Repair Garage Doors and Openers</SubTitle>
+      </TextWrapper>
+
+    {/*Informational Text Wrapper*/}
+      <TextWrapper
+        XLC="4/12"
+        XLR="3/4"
+        LC="4/12"
+        LR="3/4"
+        MC="2/10"
+        MR="3/4"
+        SC="2/8"
+        SR="3/4"
+        XSC="2/6"
+        XSR="3/4"
+        FlexCenter
+        TextAlignCenter
+      >
+        <FooterText><strong>Fully Licensed & Insured: </strong>{businessLicense}</FooterText>
+        <FooterText>Brick, NJ</FooterText>
+        <FooterLink href="tel:{contactNumber}">{contactNumber}</FooterLink>
+        <FooterLink href="mailto:{contactEmail}">{contactEmail}</FooterLink>
+      </TextWrapper>
+
+    {/*Hours Wrapper*/} 
+      <TextWrapper
+        XLC="2/14"
+        XLR="4/5"
+        LC="2/14"
+        LR="4/5"
+        MC="2/10"
+        MR="4/5"
+        SC="2/8"
+        SR="4/5"
+        XSC="2/6"
+        XSR="4/5"
+        GridAlignCenter
+        FlexCenter
+        TextAlignCenter
+      >
+        <SubTitle variant="primary">Hours</SubTitle>
+        <HoursContainer>
+          {operationHours.map(({ day, time }) => (
+            <FooterText key={day}><strong>{day}</strong>: {time}</FooterText>
+          ))}
+        </HoursContainer>
+      </TextWrapper>
+
+    {/*BBB and credit card flex*/}
+      <FooterFlex PaymentBBBFlex>
+        <ImageWrapper BBBImage>
+        <FooterLink href={bbbLink}>
           <StaticImage
-            src="../images/Logo.png"
+            src="../images/bbb-rating.png"
+            alt='better business bureau rating A+'
             layout="fullWidth"
             placeholder='blurred'
-            alt='Logo'
             quality={70}
           />
-        </div>
-      <FooterFlex InfoFlex> 
-        <FooterTitle>{companyName}</FooterTitle>
-        <FooterText>Fully Licensed & Insured</FooterText>
-        <FooterText>{businessLicense}</FooterText>
-        <FooterText>BRICK, NJ</FooterText> 
-        <FooterLink href='tel:{contactNumber}'>{contactNumber}</FooterLink> 
-        <SocialLinks/>
-      </FooterFlex>   
-     </FooterInfoContainer>
-     <HoursContainer>
-      <FooterTitle>Hours</FooterTitle>
-      {operationHours.map(({ day, time }) => (
-        <FooterText key={day}>{day}: {time}</FooterText>
-      ))}
-     </HoursContainer>
-     <PaymentsContainer>
-        <FooterText>We accept cash, check and all major credit cards</FooterText>
-        <div>
-        <StaticImage 
-          src="../images/Cards.png"
-          quality={70}
-          alt=" Credit cards display"
-          placeholder='blurred'
-          layout="fullWidth"
-        />
-      </div>
-     </PaymentsContainer>
-    </FooterFlex>
-    <FooterBottomBar>
-      <FooterFlex PoweredByFlex>
-      <FooterTitle>Powered By:</FooterTitle>
-      <GatsbyIcon/>
-      <FooterText>Gatsby</FooterText> 
-      <hr/>
-      <ContentfulIcon/>
-      <FooterText>Contentful</FooterText>
+        </FooterLink>   
+        </ImageWrapper>
+        <TextWrapper FlexCenter TextAlignCenter>
+          <SubTitle variant="primary">We accept cash, check & all major credit cards</SubTitle>
+          <ImageWrapper PaymentMethod>
+            <StaticImage 
+              src="../images/Cards.png"
+              quality={70}
+              alt=" Credit cards display"
+              placeholder='blurred'
+              layout="fullWidth"
+            />
+          </ImageWrapper>
+        </TextWrapper>
       </FooterFlex>
-      <FooterFlex CopyrightFlex>
-      <FooterText>
-        © {new Date().getFullYear()} &middot; Garage Door Masters &middot; All Rights Reserved
-      </FooterText>
+    {/*Footer Links*/}
+      <FooterFlex FooterLinks>
+        {footerLinks.map((component,index) => {
+          return (
+            <NavLink to={component.link} key={index}>{component.name}</NavLink>
+          )
+        })}
       </FooterFlex>
-      <FooterFlex DesignedByFlex>
-        <FooterTitle>
-          Designed by:
-        </FooterTitle>
-        <FooterText>
-          Diamond Digital Services
+    {/*Footer Bottom Container*/}
+      <FooterBottomBar>
+        <FooterText className="copyrightText">
+          © {new Date().getFullYear()} &middot; Garage Door Masters &middot; All Rights Reserved
         </FooterText>
-      </FooterFlex>
-    </FooterBottomBar>
+        <FooterText className="designedBy">
+          <strong>Designed By: </strong>
+          {siteAuthor}
+        </FooterText>
+      </FooterBottomBar>    
     </FooterContainer>
   )
 }

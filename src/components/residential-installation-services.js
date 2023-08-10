@@ -16,7 +16,7 @@ export const ResidentialInstallationServices = ({ section }) => {
       component.internalName === "Component: Custom Door Sizes Card" || 
       component.internalName === "Component: New Installs Card"
   );
-  console.log(ResidentialServicesCards)
+  
   return(
     <Section SectionGrid CommercialServices
       XLC="1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"

@@ -109,12 +109,14 @@ export const ProductsWrapper = styled.div`
 
   `}
   ${props => props.DoorBuilder && css`
-    flex-flex: row wrap;
-    justify-content:center;
+    flex-flow: row wrap;
+    justify-content: center;
     align-items:center;
-    gap: 1em;
-    padding: 1em 2em;
-    transition:all .5s ease-in-out;
+    gap: 1em 1em;
+    @media ${({theme}) => theme.sizes.mobile}{
+      justify-content:flex-start;
+      align-items:center;
+    }
   `}
 
   /***** Media Queries for prop inputs and styles *****/

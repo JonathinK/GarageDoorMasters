@@ -23,23 +23,21 @@ export const MobileNav = ({data}) => {
 //Handles the noScroll event on the body when the menu is open and closed
   useLayoutEffect(() => {
     const handleToggleNoScroll = () => {
-      const body = document.body;
+      const html = document.documentElement;
       if (menuOpen) {
-        body.style.overflowY = 'hidden';
-        body.style.position = 'fixed';
-        body.style.width = '100%';
+        html.style.overflow = 'hidden';
+        html.style.width = '100%';
       } else {
-        body.style.overflowY = 'auto';
-        body.style.position = 'relative';
+        html.style.overflow = 'auto';
+        html.style.position = 'relative';
       }
     };
 
     handleToggleNoScroll();
-
     // Clean up the effect to restore original body styles when the component unmounts
     return () => {
-      document.body.style.overflowY = 'auto';
-      document.body.style.position = 'relative';
+      document.documentElement.style.overflowY = 'auto';
+      document.documentElement.style.position = 'relative';
     };
   }, [menuOpen]);
 
@@ -80,8 +78,8 @@ export const MobileNav = ({data}) => {
      <MobileSlideOut menuOpen={menuOpen}>
      <ImageWrapper
       NavigationMenuLogo
-      MC="1/2"
-      MR="1/3"
+      MC="1/2" SC="1/2" XSC="1/2"
+      MR="1/4" SR="1/4" XSR="1/4"
      >
       <StaticImage
         src="../images/Logo.png"
@@ -93,15 +91,15 @@ export const MobileNav = ({data}) => {
      </ImageWrapper>
      <SvgWrapper
       navigationSvg
-      MC="1/2"
-      MR="1/2" 
+      MC="1/2" SC="1/2" XSC="1/2"
+      MR="1/2" SR="1/2" XSR="1/2"
     >
       <NavWave/>
      </SvgWrapper>
      <SvgWrapper
       navigationSvg
-      MC="1/2"
-      MR="3/4"
+      MC="1/2" SC="1/2" XSC="1/2"
+      MR="3/4" SR="3/4" XSR="3/4"
       className='flipped'
      >
       <NavWave/>
@@ -110,7 +108,10 @@ export const MobileNav = ({data}) => {
       className="close"
       aria-hidden="true" 
       onClick={menuToggleClose}
+      title='Close Menu Button'
       > 
+      <span/>
+      <span/>
      </button>
      <SocialLinks/>
       <MobileNavLinkList>

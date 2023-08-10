@@ -1,7 +1,7 @@
 import React from 'react';
 import { Banner, ContactUsSection, DoorRepair, TimeToService, HitYourDoor } from '../components';
 import { graphql } from 'gatsby';
-
+import Seo from '../components/seo';
 const ResidentialRepair = ({data}) => {
   const OpenersBanner = data.contentfulPage.banner;
   const Sections = data.contentfulPage.section;
@@ -26,6 +26,12 @@ const ResidentialRepair = ({data}) => {
   )
 }
 export default ResidentialRepair
+export const Head = ({ data }) => <Seo
+  title={data.contentfulPage.seoMetadata.seoTitle}
+  description={data.contentfulPage.seoMetadata.description}
+  canonical={data.contentfulPage.seoMetadata.canonical}
+  keywords={data.contentfulPage.seoMetadata.keywords}
+/> 
 export const query = graphql`
   query {
     contentfulPage(internalName: {eq: "Residential Garage Door Repair"}) {

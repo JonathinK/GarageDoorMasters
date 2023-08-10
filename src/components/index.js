@@ -44,3 +44,4 @@ export { HitYourDoor } from './hit-your-door';
 export { AssuranceSection } from './assurance-section';
 export { BigTextSection } from './big-text-section';
 export { OpenerServices } from './opener-services';
+export { Lightbox } from './lightbox';

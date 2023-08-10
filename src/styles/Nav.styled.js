@@ -74,18 +74,15 @@ export const Hamburger = styled.button`
   justify-content: center;
   align-items:center;
   cursor: pointer;
-  gap:.25em 0;
+  gap:.5em 0;
   border: none;
   border-radius: .25em;
   background: ${({theme}) => theme.colors.primaryblue};
-  box-shadow: 0px 4px 4px rgba(0,0,0,.22),
-              0px 2px 2px rgba(0,0,0,.33),
-              0px 0px 1px 1px rgba(0,0,0,.33) inset;
   
   div{
     background: ${({theme}) => theme.colors.white};
-    width: 60%;
-    height: 2px;
+    width: 70%;
+    height: 4px;
     border-radius: .5em;
   }
   div:first-child{
@@ -96,7 +93,12 @@ export const Hamburger = styled.button`
   }
   @media ${({theme}) => theme.sizes.mobile}{
     width: 2em;
-    height: 2em;
+    height: 2em; 
+    gap: .25em !important;
+    div{
+      height: .2em;
+    }
+     
   }
 `
 export const MobileSlideOut = styled.div`
@@ -120,55 +122,45 @@ export const MobileSlideOut = styled.div`
   /* Socials Wrapper Import */
     ${SocialsWrapper}{
       position: relative;
-      z-index:53;
+      z-index:58;
     }
-
+ 
   
-   
-  /*Close Styles For Custom Placement*/  
+/*Close Styles For Custom Placement*/  
   & .close{
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items:center;
-      cursor: pointer;
+     position:absolute;
+     top: 2em;
+     right: 2em;
+     z-index: 55;
+     height: 3em;
+     width:3em;
+     background: ${({theme}) => theme.colors.accentred};
+     border:none;
+     border-radius:.25em;
+     display:flex;
+     flex-flow: column;
+     justify-content:space-between;
+     align-items:center;
+     padding:.5em;
+
+     span{
+      background: ${({theme}) => theme.colors.white};
+      height: 4px;
+      width: 2em;
       border:none;
-      width: 2.5em;
-      height: 2.5em;
-      background: ${({theme}) => theme.colors.accentred};
-      position: absolute;
-      z-index: 53;
-      top:0;
-      right: 0;
-      transform: translate(-2em, 2em);
-      border-radius: .2em;
-      box-shadow: 0em .125em .125em rgba(0,0,0,.33),
-                  0em .25em .25em rgba(0,0,0,.22),
-                  .125em .125em .15em rgba(0,0,0,.7) inset,  
-                  -.125em -.125em .15em rgba(0,0,0,.7) inset; 
-      @media ${({theme}) => theme.sizes.hover}{
-        opacity: .7;
-        :hover{
-          opacity: 1;
-        }
-      }
-      
-      :before, :after{
-        position: absolute;
-        left: 14.835px;
-        content: ' ';
-        height: 24px;
-        width: 4px;
-        border-radius: .25em;
-        background-color: ${({theme}) => theme.colors.white};
-      }
-      :before{
-       transform: rotate(45deg);
-      }
-      :after{
-        transform: rotate(-45deg);
-      }
+      border-radius: .25em;
+      position:relative;
+     }
+     span:first-child{
+      transform: rotate(45deg) translate(5px , -1px);
+      transform-origin: center left;
+     }
+     span:last-child{
+      transform: rotate(-45deg) translate(3.5px , 2px);
+      transform-origin: center left;
+     }
   }
+//Media queries
  @media ${({theme}) => theme.sizes.largeTablet}{
  
   ${SocialsWrapper}{
@@ -200,19 +192,22 @@ export const MobileSlideOut = styled.div`
   & .close{
       width: 2em;
       height: 2em;
-
-      :before, :after{
-        left: .85em;
-        top: .5em;
-        height: 1em;
-        width: .15em;
-      }
-      :before{
-       transform: rotate(45deg) translate(2%, 2%);
-      }
-      :after{
-        transform: rotate(-45deg) translate(2%, 2%);
-      }
+      span{
+      background: ${({theme}) => theme.colors.white};
+      height: 4px;
+      width: 1.4em;
+      border:none;
+      border-radius: .25em;
+      position:relative;
+     }
+     span:first-child{
+      transform: rotate(45deg) translate(.5px,-3px);
+      transform-origin: center left;
+     }
+     span:last-child{
+      transform: rotate(-45deg) translate(.5px,3px);
+      transform-origin: center left;
+     }
   }
  }
 `

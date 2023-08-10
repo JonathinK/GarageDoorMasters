@@ -18,6 +18,7 @@ export const ResidentialOpeningStatement = ({ section }) => {
             <TextWrapper  
               XLC="4/12" LC="4/12" MC="2/10" SC="2/8" XSC="2/6"
               XLR="1/2" LR="1/2" MR="1/2" SR="1/2" XSR="1/2"
+              key={component.contentful_id}
             >
               <Kicker Alternate>{component.kicker}</Kicker>
               <Headline HeadlineRed>{component.headline}</Headline>

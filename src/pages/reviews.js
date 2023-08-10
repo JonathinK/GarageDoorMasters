@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import { Banner,ContactUsSection, ReviewsPanel, ReviewsContent } from '../components';
+import Seo from '../components/seo';
 
 
 const Reviews = ({ data }) => {
@@ -26,6 +27,12 @@ const Reviews = ({ data }) => {
 }
 export default Reviews
 
+export const Head = ({ data }) => <Seo
+  title={data.contentfulPage.seoMetadata.seoTitle}
+  description={data.contentfulPage.seoMetadata.description}
+  canonical={data.contentfulPage.seoMetadata.canonical}
+  keywords={data.contentfulPage.seoMetadata.keywords}
+/>
 export const query = graphql`
   query {
     contentfulPage (internalName: {eq: "Reviews"}) {

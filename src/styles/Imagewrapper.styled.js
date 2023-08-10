@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled, {css,keyframes} from "styled-components";
 import { SpringCard } from "./SpringsCard.styled";
 
 export const ImageWrapper = styled.div`
@@ -80,21 +80,37 @@ export const ImageWrapper = styled.div`
     height:200px;
   `}
   ${props => props.BuilderImage && css` 
-    padding: 3em 2.5em;
-    background:white;
-    flex: 1 1 100px;
-    border-radius: 1em;
-    display:flex;
+    background: ${({theme}) => theme.colors.body};
+    display: flex;
     justify-content:center;
     align-items:center;
-    min-width: 150px;
-    aspect-ratio: 1.1;
-    box-shadow: 0em 1em 1em -.5em rgba(0,0,0,.3), 0em 0em 1.2em 1em rgba(0,0,0,.4) inset;
-    border: 2px solid grey;
-    position: relative;
+    border-radius: 1em;
+    border:none;
+    flex: 0 1 11em;
+    aspect-ratio: 4/4;
+    min-width: 7em;
+    box-shadow: 0em .5em .5em rgba(0,0,0.33),
+                0em 1em 1em rgba(0,0,0,.22),
+                0em 0em 1em .25em rgba(0,0,0,.5) inset;
     
     .image{
-      width: 120px;
+      width: clamp(5em,100vw,6em);
+    }
+
+    @media ${({theme}) => theme.sizes.tablet}{
+      max-width: 20em;
+      flex: 0 1 20em;
+      border-radius: .5em;
+      .image{
+        width: clamp(5em,100vw,10em);
+      }
+      
+    } 
+    @media ${({theme}) => theme.sizes.mobile}{
+      flex: 0 1 calc(50% - 1em);
+      .image{
+        width: clamp(3em,100vw,5em);
+      }
     }
   `}
   /***Opener Installation Images ***/
@@ -303,7 +319,15 @@ export const ImageWrapper = styled.div`
       border-radius: .5em;
       overflow: hidden;
       box-shadow: 0em 1em 1em -.5em rgba(0,0,0,.33);
-      
+      opacity: 0;
+      animation: ${fadeIn} 0.8s ease-in-out forwards;
+      animation-delay: ${props => (props.index + 1) * 100}ms;
+
+      ${props =>
+        props.hide &&
+        css`
+          opacity: 0;
+        `}
      
   @media ${({theme}) => theme.sizes.hover}{ 
     transition: all 1s ease-in-out;
@@ -311,7 +335,6 @@ export const ImageWrapper = styled.div`
       transition: all 1s ease-in-out;
     }
     :hover {
-      flex: 2 1 17%;
       .image{
         transform: scale(1.2);
       }
@@ -357,6 +380,25 @@ export const ImageWrapper = styled.div`
   ${props => props.BigTextImage && css` 
      position: relative;
      z-index: 2;
+  `}
+  /*Footer Images*/
+  ${props => props.BBBImage && css`
+      width:200px;
+      border-radius: 1em;
+      box-shadow: 0em .5em .5em rgba(0,0,0,.33),
+                  0em 1em .5em rgba(0,0,0,.22);
+      img{
+        border-radius: 1em;
+      }
+  `}
+  ${props => props.PaymentMethod && css`
+      width:300px;
+      border-radius: .5em;
+      box-shadow: 0em .5em .5em rgba(0,0,0,.33),
+                  0em 1em .5em rgba(0,0,0,.22);
+      img{
+        border-radius: .5em;
+      }
   `}
   /* General ImageStyles*/
   ${props => props.LargeImage && css` 
@@ -416,6 +458,16 @@ export const ImageWrapper = styled.div`
       height:100%;
       background-image: linear-gradient(to right,${({theme}) => theme.colors.body},hsla(0,100%,100%,.1));
     }
+    :before{
+      content:'';
+      position:absolute; 
+      z-index:2;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background-image: linear-gradient(to bottom,${({theme}) => theme.colors.body},hsla(0,100%,100%,.1),${({theme}) => theme.colors.body} %);
+    }
 
    .full-width{
     position:absolute;
@@ -425,7 +477,7 @@ export const ImageWrapper = styled.div`
 
    @media ${({theme}) => theme.sizes.largeTablet}{
     :after{
-      background-image: linear-gradient(to bottom, ${({theme}) => theme.colors.body},hsla(0,100%,100%,.1));
+      background-image: linear-gradient(to bottom, ${({theme}) => theme.colors.body},hsla(0,100%,100%,.1),${({theme}) => theme.colors.body});
     }
     height:100%;
     width: 100%;
@@ -434,19 +486,12 @@ export const ImageWrapper = styled.div`
     transform: translateY(0);
    }
    @media ${({theme}) => theme.sizes.tablet}{
-    :after{
-      background-image: linear-gradient(to bottom, ${({theme}) => theme.colors.body},hsla(0,100%,100%,.1));
-    }
     height:100%;
     width: 100%;
     aspect-ratio: 4/4;
    }
    
-   @media ${({theme}) => theme.sizes.mobile}{
-    :after{
-      background-image: linear-gradient(to bottom,${({theme}) => theme.colors.body},hsla(0,100%,100%,.1));
-    }
-    
+   @media ${({theme}) => theme.sizes.mobile}{ 
     height:100%;
     width: 100%;
     aspect-ratio: 1/1;
@@ -585,7 +630,7 @@ export const ImageWrapper = styled.div`
       } 
       @media ${({theme}) => theme.sizes.tablet}{
         flex: 1 1 20%;
-        aspect-ratio: 1;
+        aspect-ratio: 1.5;
       }
       @media ${({theme}) => theme.sizes.mobile}{
         flex: 1 1 10%;
@@ -612,20 +657,22 @@ export const ImageWrapper = styled.div`
   `}
   ${props => props.NavigationMenuLogo && css`
       position:relative;
-      justify-self: stretch;
-      align-self: stretch;
-      height:100%;
+      justify-self: center;
+      align-self: center;
       width:100%;
       z-index: 51;
       opacity: .1;
-      
+      scale:1.3;
+  `} 
+  ${props => props.FooterLogo && css`
+      position:relative;
+      justify-self: center;
+      align-self: center;
+      width: 100%;
 
-
-      .image-scale{
-        scale: 1.2;
-        position:absolute;
-        width:100%;
-        height:100%;
+      @media ${({theme}) => theme.sizes.mobile}{
+        width: 200px;
+        min-width: 150px;
       }
   `}
 
@@ -651,5 +698,12 @@ export const ImageWrapper = styled.div`
     grid-row: ${props => props.XSR};
     grid-column: ${props => props.XSC};
   }
-
 `
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;

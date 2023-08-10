@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ImageGalleryWrapper = styled.div` 
   grid-column: 2/14;
-  grid-row: 2/3;
+  grid-row: 1/2;
   height: auto;
   width: 100%;
   display: flex;
@@ -11,18 +11,6 @@ export const ImageGalleryWrapper = styled.div`
   align-items: center;  
   gap: 1em;
   position: relative;
-
-  :before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,.1);
-    top: 0;
-    left: 0;
-    filter: blur(15px);
-    border-radius: 5em;
-  }
 
   @media ${({theme}) => theme.sizes.largeTablet}{
     grid-column: 2/10;

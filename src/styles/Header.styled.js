@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { SocialsWrapper } from "./SocialLinks.styled";
 
 
+
 //Header Container 
 export const HeaderContainer = styled.header`
   display:grid;
@@ -12,7 +13,6 @@ export const HeaderContainer = styled.header`
   position: fixed;
   z-index: 50;
   width:100%;
-  transition: all 1s ease-in-out;
 
   @media ${({theme}) => theme.sizes.largeTablet}{
     gap: .5em 1.5em;
@@ -20,10 +20,17 @@ export const HeaderContainer = styled.header`
   }@media ${({theme}) => theme.sizes.tablet}{
     gap: .5em 1em;
     grid-template-rows: 48px 64px;
+  }
   }@media ${({theme}) => theme.sizes.mobile}{
     gap: .5em .5em;
     grid-template-rows: 48px 40px;
     background: ${({theme}) => theme.colors.primaryblue};
+    position: fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    grid-column: 1/7;
+  }
   } 
 
   :before{
@@ -34,15 +41,15 @@ export const HeaderContainer = styled.header`
     background: ${({theme}) => theme.colors.primaryblue};
     transform: ${({scrolled}) => (scrolled ? 'scaleY(1)':'scaleY(0)')};
     transform-origin: top;
-    transition: all .5s ease;
+    transition: transform .5s ease;
   } 
+  
 `
 //Top bar that houses contact number and socials
 //These will change when the mobile device is the device being used
 export const TopBar = styled.div`
   grid-column: 2/14;
   grid-row: 1/2;
-
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -75,6 +82,7 @@ export const TopBar = styled.div`
     }
   }@media ${({theme}) => theme.sizes.mobile}{
     grid-column: 2/6;
+    overflow:hidden;
   }
 `
 export const MobileMenuBar = styled(TopBar)`
@@ -110,6 +118,7 @@ export const ContactWrapper = styled.div`
   a{
     text-decoration:none;
     color: ${({theme}) => theme.colors.white};
+    font-size: clamp(.8em, 3.5vw, 1em);
   }
 `
 export const Branding = styled.div`
@@ -117,10 +126,6 @@ export const Branding = styled.div`
   grid-column: 2/3;
   justify-self: center;
   align-self:flex-start;
-  
-  &.logo{
-       
-  }
 `
 //Logo and Company Name go here
 export const LogoWrapper = styled.div`
