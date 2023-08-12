@@ -42,8 +42,8 @@ export const HomePageAbout = ({ section }) => {
               {RenderedComponents.find(
               (c) => c.internalName === 'Landing Page: About Section Cta'
             ) && (
-              <Button primary>
-                <ButtonLink primary to={RenderedComponents.find((c) => c.internalName === 'Landing Page: About Section Cta').ctaLink}>
+              <Button primary="true">
+                <ButtonLink primary="true" to={RenderedComponents.find((c) => c.internalName === 'Landing Page: About Section Cta').ctaLink}>
                 {RenderedComponents.find(
                   (c) => c.internalName === 'Landing Page: About Section Cta'
                 ).ctaText}

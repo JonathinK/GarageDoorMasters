@@ -2,9 +2,9 @@ import React from 'react';
 import { ReviewCard, ReviewStar } from '../styles';
 import { TextBlockRender } from './text-block-render';
 
-export const ReviewComponent = ({content}) => {
+export const ReviewComponent = ({content, index}) => {
  
-  const Stars = ({ rating }) => {
+  const Stars = ({ rating, key }) => {
     if (rating === 5 ) {
       return (
         <div>
@@ -21,12 +21,12 @@ export const ReviewComponent = ({content}) => {
   };
   
   return(
-    <ReviewCard key={content.contentful_id}>
+    <ReviewCard>
       <div className="top-container">
         <p>{content.reviewPlatform}</p>
         <div className="stars">
           <p>{content.reviewRating}</p>
-          <Stars rating={content.reviewRating}/>
+          <Stars rating={content.reviewRating} key={index}/>
         </div>
       </div>
       <div className="review-author">

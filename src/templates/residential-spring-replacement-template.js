@@ -6,7 +6,6 @@ import Seo from '../components/seo';
 const ResidentialSpringRepair = ({ data }) => {
   const SpringRepairBanner = data.contentfulPage.banner;
   const Sections = data.contentfulPage.section;
-  console.log(Sections)
   return(
     <>
       <Banner data={SpringRepairBanner}/>

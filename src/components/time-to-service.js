@@ -1,5 +1,5 @@
 import React from 'react';
-import { Section,TextWrapper, ImageWrapper, Headline, Kicker, SubTitle } from '../styles';
+import { Section,TextWrapper, ImageWrapper, Headline, Kicker } from '../styles';
 import { TextBlockRender, Symptoms } from '../components';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
@@ -12,11 +12,8 @@ export const TimeToService = ({section}) => {
   const BackgroundImage = getImage(section.content.find(component => component.internalName === "Component: Time To Repair Background").repairImages);
   const JumpedCable = getImage(section.content.find(component => component.internalName === "Component: Jumped Cable Image").repairImages);
   const FrayedCable = getImage(section.content.find(component => component.internalName === "Component: Frayed Cable Image").repairImages);
-  console.log(section)
   //Finds Repair Reasons Data
   const ReasonsList = section.content.find(component => component.internalName === 'Component: Reasons List');
-
-  console.log(ReasonsList)
   return(
     <Section SectionGrid TimeToService
       XLC="1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7" 
@@ -37,6 +34,7 @@ export const TimeToService = ({section}) => {
       {/*Top Level Content That Sits Over The Background Image*/}{TextRender.map((component) => {
         return(
           <TextWrapper FlexCenter GridAlignCenter TextAlignCenter
+            key={component.contentful_id}
             XLC="5/11" LC="4/12" MC="2/10" SC="2/8" XSC="2/6" 
             XLR="1/2"  LR="1/2" MR="1/2" SR="1/2" XSR="1/2"
           >

@@ -46,6 +46,7 @@ export const ServiceCard = styled.div`
    height: auto;
    padding: 1em 1em;
    text-align:center;
+   min-width: 150px;
   }
 
   ${props => props.ServicesCard && css`

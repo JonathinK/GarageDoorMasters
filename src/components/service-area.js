@@ -23,7 +23,7 @@ export const ServiceAreas = ({ section }) => {
   )[0].listItems;
   
   return(
-    <Section SectionGrid ServiceAreas className=""
+    <Section SectionGrid ServiceAreas 
       XLC="1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"
     >
     {/* Ocean County */}
@@ -59,10 +59,15 @@ export const ServiceAreas = ({ section }) => {
         XSC="2/6"
         XSR="2/3"
       >
-        {OceanCountyTitle.map((title) => {
+        {OceanCountyTitle.map((title,index) => {
           const countyTitle = title.title;
           return (
-            <Headline HeadlineRed>{countyTitle}</Headline>
+            <Headline 
+            HeadlineRed
+            key={index}
+            >
+            {countyTitle}
+            </Headline>
           )
         })}
         <ListWrapper>
@@ -110,10 +115,15 @@ export const ServiceAreas = ({ section }) => {
         XSC="2/6"
         XSR="4/5"
       >
-        {MonmouthCountyTitle.map((title) => {
+        {MonmouthCountyTitle.map((title,index) => {
           const countyTitle = title.title;
           return (
-            <Headline HeadlineRed>{countyTitle}</Headline>
+            <Headline 
+            HeadlineRed
+            key={index}
+            >
+            {countyTitle}
+            </Headline>
           )
         })}
         <ListWrapper>

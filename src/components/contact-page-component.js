@@ -14,7 +14,6 @@ export const ContactComponent = ({ section, siteData }) => {
 
   /*Background Image Find*/
   const BackgroundImage = getImage(section.content.find(image => image.internalName === "Component: Form Background").bgImage);
-    console.log(siteData)
   return(
     <Section SectionGrid Contact
       XLC="1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"
@@ -31,28 +30,30 @@ export const ContactComponent = ({ section, siteData }) => {
       </ImageWrapper>
       {TextRender.map((component) => {
         return(
-          <TextWrapper ContactText
+          <TextWrapper 
+            ContactText
+            key={component.contentful_id}
             XLC="2/7" LC="2/7" MC="2/10" SC="2/8" XSC="2/6"
             XLR="1/2" LR="1/2" MR="1/2" SR="1/2" XSR="1/2"
           >
             <Headline HeadlineRed>{component.headline}</Headline>
             <TextBlockRender content={component}/>
             <div className="wrappers">
-            <PhoneIcon Alt />
+            <PhoneIcon alt="true"/>
             <ExternalLink href="tel:{siteData.phone}" ContactLink>{siteData.phone}
             </ExternalLink>
             </div>
             <div className="wrappers">
-            <LocationIcon Alt/>
+            <LocationIcon alt="true"/>
              <p>Brick, NJ</p>
             </div>
             <div className="businessHours">
-              <div className='wrappers'><ClockIcon Alt/><SubTitle>Hours of operation</SubTitle></div>
+              <div className='wrappers'><ClockIcon alt="true"/><SubTitle>Hours of operation</SubTitle></div>
               <br />
               <ul>
-              {siteData.businessHours.map((component) => {
+              {siteData.businessHours.map((component, index) => {
                 return(
-                  <li key={component.index}>{component.day}: {component.time}</li>
+                  <li key={index}>{component.day}: {component.time}</li>
                 )
               })}
               </ul>

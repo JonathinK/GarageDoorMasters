@@ -6,7 +6,7 @@ import Seo from '../components/seo';
 const AboutUs = ({ data }) => {
  const BannerData = data.contentfulPage.banner;
  const Sections = data.contentfulPage.section;
- console.log(Sections)
+
   return(
     <>
     <Banner data={BannerData} inputValue="Gradient"/>

@@ -17,6 +17,7 @@ export const ResidentialDamagedSprings = ({section}) => {
     {RenderedComponent.map((component) => {
       return(
         <TextWrapper 
+          key={component.contentful_id}
           XLC="2/7" LC="2/7" MC="2/10" SC="2/8" XSC="2/6"
           XLR="1/2" LR="1/2" MR="1/2" SR="1/2" XSR="1/2"
         >
@@ -30,7 +31,7 @@ export const ResidentialDamagedSprings = ({section}) => {
       XLC="8/14" LC="8/14" MC="2/10" SC="2/8" XSC="2/6"
       XLR="1/2"  LR="1/2"  MR="2/3" SR="2/3" XSR="2/3"
     >
-      <GatsbyImage image={StretchedSpring} className={`image-fit bottom-image`}/>
+      <GatsbyImage image={StretchedSpring} className={`image-fit bottom-image`} alt="Stretched Garage Door Spring"/>
     </ImageWrapper>
     </Section>
   )

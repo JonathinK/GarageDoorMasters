@@ -3,7 +3,6 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import { LightboxContainer, LightBox, LightBoxImage, Close} from '../styles';
 
 export const Lightbox = ({selectedImage, closeModal}) => {
-  console.log(selectedImage)
   return(
     <LightboxContainer>
       {selectedImage !== null && (

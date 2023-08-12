@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Button, ButtonLink, CardsWrapper, Headline, ImageWrapper, Section, TextWrapper } from '../styles';
+import { CardsWrapper, Headline,  Section, TextWrapper } from '../styles';
 import { ServicesCard } from './services-card';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { TextBlockRender } from './text-block-render';
+
 
 export const CommercialServices = ({ section }) => {
  const RenderedText = section.content.filter(

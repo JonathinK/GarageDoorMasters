@@ -39,7 +39,7 @@ export const PhoneIcon = styled(Phone)`
   aspect-ratio: 1/1;
   color: ${({theme})=> theme.colors.white};
   
-  ${props => props.Alt && css`
+  ${props => props.alt && css`
     color: ${({theme})=> theme.colors.grey};
     width: 2em;
   `}
@@ -50,7 +50,7 @@ export const LocationIcon = styled(LocationPin)`
   aspect-ratio: 1/1;
   color: ${({theme})=> theme.colors.white};
   
-  ${props => props.Alt && css`
+  ${props => props.alt && css`
     color: ${({theme})=> theme.colors.grey};
     width: 2em;
   `}
@@ -61,7 +61,7 @@ export const ClockIcon = styled(Clock)`
   aspect-ratio: 1/1;
   color: ${({theme})=> theme.colors.white};
   
-  ${props => props.Alt && css`
+  ${props => props.alt && css`
     color: ${({theme})=> theme.colors.grey};
     width: 2em;
   `}

@@ -41,7 +41,7 @@ export const HomepageServices = ({ section }) => {
     {ResidentialRender.map((component) => {
       const ResidentialImage = getImage(component.image);
       return(
-        <>
+        <React.Fragment key={component.contentful_id}>
         {component.internalName === "Landing Page: Services - Residential Image" && (
            <ImageWrapper 
             key={component.contentful_id}
@@ -73,11 +73,11 @@ export const HomepageServices = ({ section }) => {
           ) && (
             <Button 
               as="button"
-              primary
+              primary="true"
               key={component.contentful_id}
               >
               <ButtonLink
-              primary
+              primary="true"
                 to={
                   ResidentialRender.find(
                     (item) => item.internalName === "Component: Cta - Residential"
@@ -94,13 +94,13 @@ export const HomepageServices = ({ section }) => {
           )}
         </TextWrapper> 
         )}
-        </>
+        </React.Fragment>
       )
     })}
     {CommercialRender.map((component) => {
       const ResidentialImage = getImage(component.image);
       return(
-        <>
+        <React.Fragment key={component.contentful_id}>
         {component.internalName === "Landing Page: Services - Commercial Image" && (
            <ImageWrapper 
             key={component.contentful_id}
@@ -132,11 +132,11 @@ export const HomepageServices = ({ section }) => {
           ) && (
             <Button 
               as="button"
-              primary
+              primary="true"
               key={component.contentful_id}
             >
               <ButtonLink
-                primary
+                primary="true"
                 to={
                   CommercialRender.find(
                     (item) => item.internalName === "Component: Cta - Commercial"
@@ -153,7 +153,7 @@ export const HomepageServices = ({ section }) => {
           )}
         </TextWrapper> 
         )}
-        </>
+        </React.Fragment>
       )
     })}
     </Section>

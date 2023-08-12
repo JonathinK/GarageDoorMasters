@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headline, ImageWrapper, Kicker, SpringCard, SubTitle, TextWrapper } from '../styles';
+import { ImageWrapper, Kicker, SpringCard, SubTitle, TextWrapper } from '../styles';
 import { TextBlockRender } from './text-block-render';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
@@ -16,10 +16,18 @@ export const SpringsCard = ({ content }) => {
       </TextWrapper>
       <ImageWrapper SpringCardImage>
         {Extension && (
-          <GatsbyImage image={getImage(content.image)} className='extension'/>
+          <GatsbyImage 
+            image={getImage(content.image)} 
+            className='extension'
+            alt="extension spring"
+          />
         )}
         {Torsion && (
-          <GatsbyImage image={getImage(content.image)} className='torsion'/>
+          <GatsbyImage 
+            image={getImage(content.image)} 
+            className='torsion'
+            alt="torsion spring" 
+            />
         )}
       </ImageWrapper>
     </SpringCard>

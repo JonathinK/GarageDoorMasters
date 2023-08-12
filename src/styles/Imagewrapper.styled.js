@@ -2,7 +2,7 @@ import styled, {css,keyframes} from "styled-components";
 import { SpringCard } from "./SpringsCard.styled";
 
 export const ImageWrapper = styled.div`
-  
+  overflow:hidden;
   ${props => props.AboutBackground && css` 
     position:relative;
     opacity: .25;
@@ -86,7 +86,7 @@ export const ImageWrapper = styled.div`
     align-items:center;
     border-radius: 1em;
     border:none;
-    flex: 0 1 11em;
+    flex: 0 1 calc(25% - 2em);
     aspect-ratio: 4/4;
     min-width: 7em;
     box-shadow: 0em .5em .5em rgba(0,0,0.33),
@@ -94,20 +94,31 @@ export const ImageWrapper = styled.div`
                 0em 0em 1em .25em rgba(0,0,0,.5) inset;
     
     .image{
-      width: clamp(5em,100vw,6em);
+      width: clamp(5em,10vw,8em);
     }
 
+    @media ${({theme}) => theme.sizes.largeTablet}{
+      flex: 0 1 calc(50% - 1em);
+      min-width: 5em;
+      max-width: 10em;
+      border-radius: .5em;
+     
+      .image{
+        width: clamp(3em,10vw,6em);
+      }
+    }
     @media ${({theme}) => theme.sizes.tablet}{
       max-width: 20em;
-      flex: 0 1 20em;
+      flex: 0 1 calc(50% - 1em);
+      min-width: 15em;
       border-radius: .5em;
       .image{
-        width: clamp(5em,100vw,10em);
+        width: clamp(5em,100vw,8em);
       }
-      
     } 
     @media ${({theme}) => theme.sizes.mobile}{
       flex: 0 1 calc(50% - 1em);
+      min-width: 6em;
       .image{
         width: clamp(3em,100vw,5em);
       }
@@ -191,6 +202,7 @@ export const ImageWrapper = styled.div`
     position:relative;
     justify-self:stretch;
     align-self: stretch;
+    overflow: visible;
 
     .genie{ 
       mix-blend-mode: screen;
@@ -383,7 +395,8 @@ export const ImageWrapper = styled.div`
   `}
   /*Footer Images*/
   ${props => props.BBBImage && css`
-      width:200px;
+      width:clamp(150px, 10vw, 200px);
+      
       border-radius: 1em;
       box-shadow: 0em .5em .5em rgba(0,0,0,.33),
                   0em 1em .5em rgba(0,0,0,.22);
@@ -392,7 +405,7 @@ export const ImageWrapper = styled.div`
       }
   `}
   ${props => props.PaymentMethod && css`
-      width:300px;
+      width:clamp(200px, 50vw, 300px);
       border-radius: .5em;
       box-shadow: 0em .5em .5em rgba(0,0,0,.33),
                   0em 1em .5em rgba(0,0,0,.22);
@@ -466,7 +479,7 @@ export const ImageWrapper = styled.div`
       top:0;
       width:100%;
       height:100%;
-      background-image: linear-gradient(to bottom,${({theme}) => theme.colors.body},hsla(0,100%,100%,.1),${({theme}) => theme.colors.body} %);
+      background-image: linear-gradient(to bottom,${({theme}) => theme.colors.body},hsla(0,100%,100%,.1),${({theme}) => theme.colors.body} 85%);
     }
 
    .full-width{
@@ -662,7 +675,7 @@ export const ImageWrapper = styled.div`
       width:100%;
       z-index: 51;
       opacity: .1;
-      scale:1.3;
+      scale:2;
   `} 
   ${props => props.FooterLogo && css`
       position:relative;

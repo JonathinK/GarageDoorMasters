@@ -188,6 +188,8 @@ export const MobileSlideOut = styled.div`
     width:100%;
   ${SocialsWrapper}{
     gap:2em;
+    position: relative;
+    z-index: 60;
   }
   & .close{
       width: 2em;

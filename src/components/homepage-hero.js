@@ -4,7 +4,6 @@ import { Section, HeroImage, TextWrapper, Kicker, PageTitle, Button, ButtonLink 
 import { TextBlockRender } from './text-block-render';
 
 export const Hero = ({ data }) => {
-  console.log(data)
   const background = getImage(data.backgroundImage.gatsbyImageData);
   return(
     <Section HeroSection
@@ -24,8 +23,8 @@ export const Hero = ({ data }) => {
       {data.title && <PageTitle>{data.title}</PageTitle>}
       {data && <TextBlockRender content={data} TextValue="primary"/>}
       {data.ctaBlock.map((component) => 
-        <Button primary key={component.contentful_id}>
-          <ButtonLink primary to={component.ctaLink}>{component.text}</ButtonLink>
+        <Button primary="true" key={component.contentful_id}>
+          <ButtonLink primary="true" to={component.ctaLink}>{component.text}</ButtonLink>
         </Button>
       )}
       </TextWrapper>

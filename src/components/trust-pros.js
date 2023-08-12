@@ -18,7 +18,7 @@ export const TrustPros = ({ section }) => {
         XLC= "1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"
         XLR= "1/2"  LR="1/2"  MR="1/2"  SR="1/2"  XSR="1/2"
       >
-        <GatsbyImage image={BackgroundImage} className="image-fit"/>
+        <GatsbyImage image={BackgroundImage} className="image-fit" alt=""/>
       </ImageWrapper>
       {TextRender.map((component) => {
         return(

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Section, TextWrapper, Headline,Kicker, ButtonLink, Button, ImageWrapper} from '../styles';
+import { Section, TextWrapper, Headline,Kicker, ImageWrapper} from '../styles';
 import { TextBlockRender } from './text-block-render';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 

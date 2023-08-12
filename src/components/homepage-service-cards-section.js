@@ -13,8 +13,8 @@ export const HomepageServicesCards = ({ section }) => {
         {section.content.map((component,index) => {
           return (
             <ServicesCard 
-              key={index} 
               content={component}
+              key={index}
               cardIcon={true}
             />
           )

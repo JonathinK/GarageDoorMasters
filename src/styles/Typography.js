@@ -57,7 +57,7 @@ export const Headline = styled.h2`
   `}
   ${props => props.HeadlineMedium && css`
     font-size: ${({theme}) => theme.fontSize.h3};
-    color:${({theme}) => theme.colors.primaryblue};
+    color:${({theme}) => theme.colors.grey};
   `}
 
   &.color-change{

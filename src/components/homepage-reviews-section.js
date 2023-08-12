@@ -44,7 +44,7 @@ export const HomepageReviews= ({section}) => {
     </ImageWrapper>
     {TextRender.map((component) => {
       return(
-        <>
+        <React.Fragment key={component.contentful_id}>
         {component.internalName === "Landing Page: Reviews Text" && (
           <TextWrapper 
             ServiceText
@@ -63,11 +63,11 @@ export const HomepageReviews= ({section}) => {
           ) && (
             <Button 
               as="button"
-              primary
+              primary="true"
               key={component.contentful_id}
               >
               <ButtonLink
-              primary
+              primary="true"
                 to={
                   TextRender.find(
                     (item) => item.internalName === "Landing Page: Reviews Cta"
@@ -84,13 +84,12 @@ export const HomepageReviews= ({section}) => {
           )}
         </TextWrapper> 
         )}  
-        </>
-        
+        </React.Fragment>  
       )
     })}
     <ReviewCardWrapper HomePageReview>
-        {FeatureReview.map((review) => (
-          <ReviewComponent content={review} key={review.contentful_id}/>
+        {FeatureReview.map((review,index) => (
+          <ReviewComponent content={review} key={index}/>
         ))}
     </ReviewCardWrapper>
     </Section>

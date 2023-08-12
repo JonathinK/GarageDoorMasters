@@ -13,11 +13,11 @@ const Reviews = ({ data }) => {
       {Sections.map((section) => {
         switch(section.internalName) {
           case "Section: Reviews Panel":
-            return <ReviewsPanel section={section} id={section.contentful_id}/>
+            return <ReviewsPanel section={section} key={section.contentful_id}/>
           case "Section: Reviews Content":
-            return <ReviewsContent section={section} id={section.contentful_id}/>
+            return <ReviewsContent section={section} key={section.contentful_id}/>
           case "Section: Contact Us Section":
-            return <ContactUsSection section={section} id={section.contentful_id}/>
+            return <ContactUsSection section={section} key={section.contentful_id}/>
           default:
             return null;
         }
@@ -66,6 +66,7 @@ export const query = graphql`
         no_follow
       }
       section{
+        contentful_id
         ...ReviewsPanel
         ...ReviewsContent
         ...ContactUsSection

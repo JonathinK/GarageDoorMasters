@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import { Banner, AreasServicedOpening, ServiceAreas, ContactUsSection} from '../components';
+import { Banner,  ServiceAreas, ContactUsSection} from '../components';
 import Seo from '../components/seo';
 
 
@@ -13,8 +13,6 @@ const AreasWeService = ({ data }) => {
       <Banner data={BannerData} inputValue=""/>
       {Sections.map((section) => {
         switch(section.internalName){
-          case "Section: Areas Serviced Opening":
-            return <AreasServicedOpening section={section} key={section.contentful_id}/>
           case "Section: Areas":
             return <ServiceAreas section={section} key={section.contentful_id}/>
           case "Section: Contact Us Section":
@@ -69,7 +67,6 @@ export const query = graphql`
       section{
         internalName
         contentful_id
-        ...AreasServicedOpeningContent
         ...Counties
         ...ContactUsSection
       }

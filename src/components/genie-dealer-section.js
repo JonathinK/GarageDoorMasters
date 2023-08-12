@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageWrapper, Section, TextWrapper, Kicker, Headline, Button, ExternalLink, Video, Iframe } from '../styles';
+import { ImageWrapper, Section, TextWrapper, Kicker, Headline, Video, Iframe } from '../styles';
 import { graphql } from 'gatsby';
 import { GatsbyImage, getImage} from 'gatsby-plugin-image';
 import { TextBlockRender } from './text-block-render';
@@ -8,7 +8,7 @@ import { TextBlockRender } from './text-block-render';
 export const GenieDealerSection = ({section}) => {
   const GenieImage = getImage(section.content.find(component => component.internalName === "Component: Genie Image").image);
   const BadgeImage = getImage(section.content.find(component => component.internalName === "Component: Genie Badge").image);
-  const GenieVideo = section.content.find(component => component.internalName === "Component: Genie Video");
+  const GenieVideo = section.content.find(component => component.internalName === "Component: Genie Video").videoLink;
   const ComponentRender = section.content.filter(
     (component) => 
       component.internalName === 'Component: Genie Dealer Text'
@@ -69,8 +69,10 @@ export const GenieDealerSection = ({section}) => {
         XSR="2/3"
       >
         <Iframe
-        src= {GenieVideo.videoLink}
-        title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen
+        src={GenieVideo}
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen
        />
       </Video>
     </Section>

@@ -9,10 +9,10 @@ export const ResidentialServicePageCard = ({ content }) => {
         <SubTitle ServiceCardSub className="red-color">{content.title}</SubTitle>
         <TextBlockRender content={content}/>
       </TextWrapper>
-       <Button primary
+       <Button primary="true"
           className="no-animation"
         >
-          <ButtonLink primary to={content.cta.link}>
+          <ButtonLink primary="true" to={content.cta.link}>
             {content.cta.text}
           </ButtonLink>
         </Button>

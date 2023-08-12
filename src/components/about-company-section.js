@@ -33,7 +33,7 @@ export const AboutGdmSection = ({ section }) => {
       {RenderedComponents.map((component) => {
         if (component.internalName === 'About the company: Text') {
           return(
-            <TextWrapper key={component.id} GridAlignCenter
+            <TextWrapper key={component.contentful_id} GridAlignCenter
               XLC="2/8 " LC="2/8" MC="2/10" SC="2/8" XSC="2/6" 
               XLR="2/3" LR="2/3" MR="2/3" SR="2/3" XSR="2/3"
             >
@@ -52,6 +52,7 @@ export const AboutGdmSection = ({ section }) => {
         <GatsbyImage
           image={AboutImage}
           className='image-size'
+          alt="Gdm Logo"
         />
       </ImageWrapper>     
     {/* Owner Text And Image*/}

@@ -34,7 +34,7 @@ export const ContactUsSection = ({ section }) => {
             <TextBlockRender content={component}/>
             {RenderedComponents.find((c) => c.internalName === 'Component: Contact Us Section Cta') && (
               <Button primary>
-                <ButtonLink primary to={RenderedComponents.find((c) => c.internalName === 'Component: Contact Us Section Cta').ctaLink}>
+                <ButtonLink primary="true" to={RenderedComponents.find((c) => c.internalName === 'Component: Contact Us Section Cta').ctaLink}>
                 {RenderedComponents.find(
                   (c) => c.internalName === 'Component: Contact Us Section Cta'
                 ).ctaText}

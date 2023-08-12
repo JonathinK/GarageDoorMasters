@@ -24,7 +24,7 @@ export const ReviewsContent = ({ section }) => {
           return (
             <ReviewComponent 
               content={review} 
-              key={review.contentful_id} 
+              key={review.contentful_id}
             />
           )
         })}
@@ -48,8 +48,8 @@ const Pagination = ({ reviewsPerPage, totalReviews, paginate, currentPage }) => 
 
   return (
     <ul className="pagination">
-      {pageNumbers.map((number) => (
-        <li key={number}>
+      {pageNumbers.map((number,index) => (
+        <li key={index}>
           <Button 
             onClick={() => paginate(number)} 
             disabled={currentPage === number}

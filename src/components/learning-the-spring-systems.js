@@ -34,6 +34,7 @@ export const ResidentialLearningTheSystem = ({ section }) => {
             XLR="1/2"  LR="1/2"  MR="1/2"  SR="1/2" XSR="1/2"
             TextAlignCenter
             FlexCenter
+            key={component.contentful_id}
           >
             <Kicker>{component.kicker}</Kicker>
             <Headline>{component.headline}</Headline>

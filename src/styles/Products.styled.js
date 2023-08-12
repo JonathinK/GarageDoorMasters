@@ -112,10 +112,28 @@ export const ProductsWrapper = styled.div`
     flex-flow: row wrap;
     justify-content: center;
     align-items:center;
-    gap: 1em 1em;
-    @media ${({theme}) => theme.sizes.mobile}{
-      justify-content:flex-start;
+    gap: 2em 2em;
+    transition: all .5s ease-in-out;
+
+    @media ${({theme}) => theme.sizes.desktop}{
+      justify-content:center;
       align-items:center;
+      gap: 1.5em 1.5em;
+    } 
+    @media ${({theme}) => theme.sizes.largeTablet}{
+      justify-content:center;
+      align-items:center;
+      gap: 1.5em 1.5em;
+    }
+    @media ${({theme}) => theme.sizes.tablet}{
+      justify-content:center;
+      align-items:center;
+      gap: 1em 1em;
+    }
+    @media ${({theme}) => theme.sizes.mobile}{
+      justify-content:center;
+      align-items:center;
+      gap: 1em 1em;
     }
   `}
 
@@ -131,17 +149,14 @@ export const ProductsWrapper = styled.div`
   @media ${({theme}) => theme.sizes.largeTablet}{
     grid-row: ${props => props.MR}; 
     grid-column: ${props => props.MC}; 
-    gap: 3.2em 3.2em;
   }
   @media ${({theme}) => theme.sizes.tablet}{
     grid-row: ${props => props.SR};
     grid-column: ${props => props.SC};
-    gap: 2em 2em;
   }
   @media ${({theme}) => theme.sizes.mobile}{
     grid-row: ${props => props.XSR};
     grid-column: ${props => props.XSC};
-    gap: 2em 2em;
   }
 `
 export const Product = styled.div`

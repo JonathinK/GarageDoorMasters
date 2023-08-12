@@ -142,7 +142,7 @@ export const Section = styled.section`
     grid-template-columns: inherit;
     position: relative;
     z-index: 2;
-    background: ${({theme}) => theme.colors.white};
+    background: ${({theme}) => theme.colors.body};
     gap: 0em 1em;
     padding: 5em 0em;
   `}
@@ -169,7 +169,7 @@ export const Section = styled.section`
   ${props => props.HelpingHomeownersSection && css`
     grid-template-rows: auto;
     grid-template-columns:inherit;
-    background-color: ${({theme}) => theme.colors.white};
+    background-color: ${({theme}) => theme.colors.body};
     padding: 3em 0em;
     gap: 2em 1em;
     position: relative;
@@ -209,7 +209,7 @@ export const Section = styled.section`
   `}
   /***Residential Spring Replacement Sections***/
   ${props => props.ResidentialDamagedSprings && css` 
-    background: ${({theme}) => theme.colors.white};
+    background: ${({theme}) => theme.colors.body};
     gap: 1em 1em;
   `}
   ${props => props.ResidentialLearningTheSystem && css` 
@@ -240,7 +240,7 @@ export const Section = styled.section`
      overflow:hidden;
   `}
   ${props => props.CommercialServices && css`
-     background: ${({theme}) => theme.colors.white};
+     background: ${({theme}) => theme.colors.body};
      overflow:hidden;
   `}
   /***Residential Installation***/
@@ -262,7 +262,7 @@ export const Section = styled.section`
   `} 
   /***Residential Repair***/
   ${props => props.Repair && css`
-    background: ${({theme}) => theme.colors.white};
+    background: ${({theme}) => theme.colors.body};
     position: relative;
   `}
   ${props => props.TimeToService && css` 
@@ -270,7 +270,7 @@ export const Section = styled.section`
     overflow:hidden;
   `} 
   ${props => props.HitDoor && css` 
-    background: ${({theme}) => theme.colors.white};
+    background: ${({theme}) => theme.colors.body};
     position: relative;
     overflow:hidden;
   `} 
@@ -296,7 +296,7 @@ export const Section = styled.section`
     overflow: hidden;
   `}
   ${props => props.ReviewSection && css`
-    background-image: linear-gradient(to bottom, ${({theme}) => theme.colors.primaryblue}, ${({theme}) => theme.colors.white});
+    background-image: linear-gradient(to bottom, ${({theme}) => theme.colors.primaryblue}, ${({theme}) => theme.colors.body});
     overflow: hidden;
     padding: 0em 0em 5em 0em !important;
   `}

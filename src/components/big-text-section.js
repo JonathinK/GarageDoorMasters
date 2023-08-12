@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { GatsbyImage,getImage } from 'gatsby-plugin-image';
-import { CardsWrapper, FeatureCard, Headline, ImageWrapper, Section, SubTitle, TextWrapper } from '../styles';
+import {  Headline, ImageWrapper, Section, TextWrapper } from '../styles';
 
 
 export const BigTextSection = ({section}) => {
