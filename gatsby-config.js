@@ -65,13 +65,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        custom: {
-          families: [
-            'Orbitron',
-            'good-headline-web-pro-wide',
-            't26-carbon'
-          ],
-          urls: ['https://use.typekit.net/hnr3hay.css'],
+        typekit: {
+          id:'hnr3hay',
         },
       },
     },

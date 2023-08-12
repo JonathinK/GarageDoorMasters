@@ -1,7 +1,6 @@
 import React, { useState, useLayoutEffect, useEffect } from 'react';
-import { Hamburger, ImageWrapper, MobileNavLink, MobileNavLinkList, MobileNavListItem, MobileNavigationWrapper, MobileSlideOut, SvgWrapper } from '../styles';
+import { Hamburger, ImageWrapper, MobileNavLink, MobileNavLinkList, MobileNavListItem, MobileNavigationWrapper, MobileSlideOut } from '../styles';
 import { SocialLinks } from './social-links';
-import NavWave from '../svg/assets/main-wave.svg'; 
 import { StaticImage } from 'gatsby-plugin-image';
 import { useRef } from 'react';
 
@@ -89,21 +88,6 @@ export const MobileNav = ({data}) => {
         className= "image-scale"
       />
      </ImageWrapper>
-     <SvgWrapper
-      navigationSvg
-      MC="1/2" SC="1/2" XSC="1/2"
-      MR="1/2" SR="1/2" XSR="1/2"
-    >
-      <NavWave/>
-     </SvgWrapper>
-     <SvgWrapper
-      navigationSvg
-      MC="1/2" SC="1/2" XSC="1/2"
-      MR="3/4" SR="3/4" XSR="3/4"
-      className='flipped'
-     >
-      <NavWave/>
-     </SvgWrapper>
      <button 
       className="close"
       aria-hidden="true" 
