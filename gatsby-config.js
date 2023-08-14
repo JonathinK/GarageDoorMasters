@@ -10,7 +10,8 @@ module.exports = {
     title: `Garage Door Masters`,
     description: `Garage Door Masters are your one stop shop for all of your Residential and Commercial garage door needs. From broken springs to new doors,"we do it all". We service monmouth and ocean counties`,
     author: `DiamondDigitalServices`,
-    canonical: `https://garagedoormastersllc.com/`,
+    siteUrl:`https://www.garagedoormastersllc.com/`,
+    canonical: `https://www.garagedoormastersllc.com/`,
     phone:`(732)-870-7313`,
     navigationLinks: [
       {name: "Residential", link:"/residential"},
@@ -42,16 +43,25 @@ module.exports = {
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
-    {
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    { /* Google Tag Manager */
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: process.env.GTAG_ID,
+        includeInDevelopment: false,
+        defaultDataLayer: {platform: 'gatsby'},
+        enableWebVitalsTracking: true,
+      }
+    },
+    {/* Gatsby Filesystem */
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
+    },  
+    { /* Netlify Plugin */
       resolve: `gatsby-plugin-netlify`,
       options: {
         headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
@@ -62,7 +72,7 @@ module.exports = {
         generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       },
     },
-    {
+    { /* Web Font Loader */
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         typekit: {
@@ -70,7 +80,61 @@ module.exports = {
         },
       },
     },
-    {
+    { /* SiteMap Plugin */
+      resolve: 'gatsby-plugin-sitemap',
+      options:{
+        createLinkInHead: true,
+        query: `
+          {
+            site{
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            allContentfulPage {
+              nodes {
+                slug
+                updatedAt
+              }
+            }
+            allContentfulLandingPage {
+              nodes {
+                slug
+                updatedAt
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: ({ site }) => site.siteMetadata.siteUrl,
+        resolvePages: ({
+          allSitePage: { nodes: allPages },
+          allContentfulPage: { nodes: allContentfulPages },
+        }) => {
+          const contentfulPageMap = allContentfulPages.reduce((acc, node) => {
+            const { slug } = node;
+            acc[slug] = node;
+
+            return acc;
+          }, {});
+
+          return allPages.map(page => {
+            return { ...page, ...contentfulPageMap[page.path] };
+          });
+        },
+        serialize: ({ path, updatedAt }) => {
+          return {
+            url: path,
+            lastmod: updatedAt,
+          };
+        },
+      },
+    },
+    { /* Plugin Manifest */
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -84,7 +148,7 @@ module.exports = {
         icon: `src/images/Logo.png`, // This path is relative to the root of the site.
       },
     },
-    {
+    { /* React Svg Plugin */
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
@@ -92,7 +156,7 @@ module.exports = {
         }
       }
     },
-    {
+    { /* Contentful Plugin*/
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,

@@ -14,6 +14,7 @@ export const Hero = ({ data }) => {
           image={background}
           alt=""
           className='background-fit'
+          loading='eager'
         />
       </HeroImage>
       <TextWrapper HeroText

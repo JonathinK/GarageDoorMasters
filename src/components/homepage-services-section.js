@@ -53,6 +53,7 @@ export const HomepageServices = ({ section }) => {
             image={ResidentialImage}
             alt=""
             className="image-fit"
+            loading='lazy'
           />
         </ImageWrapper>
         )}
@@ -112,6 +113,7 @@ export const HomepageServices = ({ section }) => {
             image={ResidentialImage}
             alt=""
             className="image-fit"
+            loading='lazy'
           />
         </ImageWrapper>
         )}

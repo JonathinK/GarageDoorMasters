@@ -8,13 +8,13 @@ export const ProductsWrapper = styled.div`
   ${props => props.ProductSlide && css`
     background: ${({theme}) => theme.colors.white};
     flex-flow: row nowrap;
-    justify-self:center;
+    justify-self:start;
     align-self:center;
-    justify-content:stretch;
+    justify-content: flex-start;
     align-items:center;
     width:100%;
     height:auto;
-    padding: 2em 2em;
+    padding: 4em 0em;
     gap: 1em 5em;
     overflow: hidden;
     box-shadow: 0px 4px 8px black inset,
@@ -25,7 +25,7 @@ export const ProductsWrapper = styled.div`
       left: 0;
       top:0;
       height:100%;
-      width:20%;
+      width:30%;
       background:linear-gradient(
         to left,
         rgba(255,255,255,0),
@@ -39,7 +39,7 @@ export const ProductsWrapper = styled.div`
       right: 0;
       top:0;
       height:100%;
-      width:20%;
+      width:30%;
       background-image:linear-gradient(
         to right,
         rgba(255,255,255,0),
@@ -54,12 +54,14 @@ export const ProductsWrapper = styled.div`
       align-items:inherit;
       gap:inherit;
       animation: ${slideLeftDesktop} 25s infinite linear;
-      width: calc(300px * 20);
+      width: calc(200px * 10 + 5em * 10);
+      will-change: animation; 
     }
+   
     @media ${({theme}) => theme.sizes.tablet}{
       & .slide-container{
       animation: ${slideLeftTablet} 25s infinite linear;
-      width: calc(150px * 20);
+      width: calc(100px * 10 + 5em * 10); 
     }
     :before{
       content: '';
@@ -67,7 +69,7 @@ export const ProductsWrapper = styled.div`
       left: 0;
       top:0;
       height:100%;
-      width:30%;
+      width:20%;
       background:linear-gradient(
         to left,
         rgba(255,255,255,0),
@@ -81,7 +83,7 @@ export const ProductsWrapper = styled.div`
       right: 0;
       top:0;
       height:100%;
-      width:30%;
+      width:20%;
       background-image:linear-gradient(
         to right,
         rgba(255,255,255,0),
@@ -162,13 +164,21 @@ export const ProductsWrapper = styled.div`
 export const Product = styled.div`
   
   ${props => props.ProductFixed && css`
-    width: 300px;
-    min-width: 300px;
+    width: 200px;
+    min-width: 200px;
     filter: grayscale(100%);
+    position: relative;
+    
+    & .image-container{
+      
+    }
+    .product-image{
+      
+    }
     
     @media ${({theme}) => theme.sizes.tablet}{
-      min-width: 150px;
-      width: 150px;
+      min-width: 100px;
+      width: 100px;
     }
   `}
 
@@ -217,7 +227,7 @@ const slideLeftDesktop = keyframes`
     transform: translateX(0%);
   }
   100%{
-    transform: translateX(calc(-380px * 10));
+    transform: translateX(calc(-100% - 5em));
   }
 `
 const slideLeftTablet = keyframes`
@@ -225,6 +235,6 @@ const slideLeftTablet = keyframes`
     transform: translateX(0%);
   }
   100%{
-    transform: translateX(calc(-121.4% / 2));
+    transform: translateX(calc(-100% - 5em));
   }
 `

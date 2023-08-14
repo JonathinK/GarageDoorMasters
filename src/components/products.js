@@ -34,6 +34,8 @@ export const ProductsList = ({ section }) => {
             />
           </Product>
         ))}
+        </div>
+        <div className="slide-container">
         {images.map((image) => (
           <Product 
             key={image.contentful_id}
@@ -44,6 +46,7 @@ export const ProductsList = ({ section }) => {
               imgClassName='product-image'
               image={getImage(image)}
               alt=""
+              loading='eager'
             />
           </Product>
         ))}
@@ -73,10 +76,11 @@ export const query = graphql`
           contentful_id
           id
           gatsbyImageData(
-            quality: 100
-            placeholder: DOMINANT_COLOR
+            quality: 50
+            placeholder: BLURRED
             layout: FULL_WIDTH
             resizingBehavior: SCALE
+            aspectRatio: 3
           )
         }
       }

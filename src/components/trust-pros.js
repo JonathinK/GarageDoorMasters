@@ -18,7 +18,7 @@ export const TrustPros = ({ section }) => {
         XLC= "1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"
         XLR= "1/2"  LR="1/2"  MR="1/2"  SR="1/2"  XSR="1/2"
       >
-        <GatsbyImage image={BackgroundImage} className="image-fit" alt=""/>
+        <GatsbyImage image={BackgroundImage} className="image-fit" alt="" loading="lazy"/>
       </ImageWrapper>
       {TextRender.map((component) => {
         return(
@@ -61,7 +61,7 @@ export const query = graphql`
               layout: FULL_WIDTH
               outputPixelDensities: 1.5
               placeholder: BLURRED
-              quality: 60
+              quality: 50
               resizingBehavior: SCALE
             )
           }

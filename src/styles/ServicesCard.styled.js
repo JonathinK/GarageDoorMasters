@@ -8,7 +8,7 @@ export const ServiceCard = styled.div`
   flex: 1 1 20%;
   border-radius: 1em;
   overflow:hidden;
-  padding: 1em;
+  padding: 2em;
   justify-content: center;
   align-items:center;
   
@@ -18,7 +18,7 @@ export const ServiceCard = styled.div`
     justify-content: center;
     align-items: center;
     flex: 1 1 40%;
-    padding: 1em;
+    padding: 2em;
   }
   @media ${({theme}) => theme.sizes.largeTablet}{
     flex-flow: column nowrap;
@@ -32,7 +32,7 @@ export const ServiceCard = styled.div`
     justify-content: center;
     align-items:center;
     text-align: center;
-    padding: 1em;
+    padding: 2em;
     gap:1em 1.5em;
     height: auto;
     min-width: 260px;
@@ -44,7 +44,7 @@ export const ServiceCard = styled.div`
    align-items:center;
    overflow: hidden;
    height: auto;
-   padding: 1em 1em;
+   padding: 2em 2em;
    text-align:center;
    min-width: 150px;
   }

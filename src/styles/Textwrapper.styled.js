@@ -37,7 +37,11 @@ export const TextWrapper = styled.div`
     text-align:center;
     
    
-    @media ${({theme}) => theme.sizes.tablet}{
+    @media ${({theme}) => theme.sizes.desktop}{
+      p{
+        max-width: 500px;
+      }
+    }@media ${({theme}) => theme.sizes.tablet}{
       padding: 0em 0em;
     }
   `}

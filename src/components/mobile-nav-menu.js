@@ -69,7 +69,12 @@ export const MobileNav = ({data}) => {
 
   return(
     <MobileNavigationWrapper ref={menuRef}>
-     <Hamburger onClick={menuToggle}>
+      <Hamburger 
+        onClick={menuToggle}
+        role='button'
+        aria-label='Mobile Menu Open Button'
+        tabIndex={0}
+      >
         <div/>
         <div/>
         <div/>
@@ -84,15 +89,17 @@ export const MobileNav = ({data}) => {
         src="../images/Logo.png"
         alt='Garage Door Masters Logo'
         layout="fullWidth"
-        quality={90}
+        quality={60}
         className= "image-scale"
+        loading='auto'
       />
      </ImageWrapper>
      <button 
       className="close"
-      aria-hidden="true" 
+      aria-hidden={menuOpen ? "true" : "false"} 
+      aria-label='Mobile Menu Close Button'
       onClick={menuToggleClose}
-      title='Close Menu Button'
+      title='Mobile Menu Close Button'
       > 
       <span/>
       <span/>

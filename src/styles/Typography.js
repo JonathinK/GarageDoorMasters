@@ -70,7 +70,7 @@ export const Headline = styled.h2`
     font-size: ${({theme}) => theme.fontSize.h4};
   }
 `
-export const SubTitle = styled.h5`
+export const SubTitle = styled.h3`
   font-family: ${({theme}) => theme.fonts.headline};
   font-size: ${({theme}) => theme.fontSize.h5};
   color: ${({theme}) => theme.colors.grey};

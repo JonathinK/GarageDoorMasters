@@ -40,6 +40,7 @@ export const HomepageReviews= ({section}) => {
         image={ReviewsImage}
         className="image-fit"
         alt="Happy Couple Excited"
+        loading='lazy'
       />
     </ImageWrapper>
     {TextRender.map((component) => {

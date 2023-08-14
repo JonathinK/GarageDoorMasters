@@ -8,7 +8,12 @@ export const Banner = ({ data, inputValue }) => {
   return(
     <BannerContainer>
       <BannerImage variant={inputValue}>
-        <GatsbyImage image={getImage(BackgroundImage)} className="image-fit" alt=""/>
+        <GatsbyImage 
+        image={getImage(BackgroundImage)} 
+        className="image-fit" 
+        alt=""
+        loading="eager"
+        />
       </BannerImage>
       <BannerTitleBlock>
         {data.title && <PageTitle>{data.title}</PageTitle>}
