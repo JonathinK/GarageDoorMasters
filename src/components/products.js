@@ -78,9 +78,10 @@ export const query = graphql`
           gatsbyImageData(
             quality: 50
             placeholder: BLURRED
-            layout: FULL_WIDTH
+            layout: CONSTRAINED
             resizingBehavior: SCALE
             aspectRatio: 3
+            width: 200
           )
         }
       }

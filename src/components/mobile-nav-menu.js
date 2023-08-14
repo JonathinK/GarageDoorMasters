@@ -91,7 +91,7 @@ export const MobileNav = ({data}) => {
         layout="fullWidth"
         quality={60}
         className= "image-scale"
-        loading='auto'
+        loading='lazy'
       />
      </ImageWrapper>
      <button 
