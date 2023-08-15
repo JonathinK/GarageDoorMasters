@@ -4,20 +4,21 @@ const { default: Layout } = require("./src/components/layout");
 const { GlobalStyles } = require("./src/styles/Global.styled");
 const { mainTheme } = require("./src/themes/Theme");
 
+
 // Makes the theme available to the entire application
 //Also in the future i will implement a feature to change the theme to lighter colors
 exports.wrapRootElement = ({ element }) => {
-  return(
+  return(   
     <ThemeProvider theme={mainTheme}>
+    <GlobalStyles/>
       {element}
-    </ThemeProvider>
+    </ThemeProvider>    
   )
 }
 //Wraps every page with layout
 exports.wrapPageElement = ({ element, props}) => {
   return(
     <Layout {...props}>
-      <GlobalStyles/>
       {element}
     </Layout>
   )

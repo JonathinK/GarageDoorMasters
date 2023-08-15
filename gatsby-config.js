@@ -38,6 +38,7 @@ module.exports = {
       {name: "networkx", url: 'https://www.networx.com/c.garage-door-masters-llc'}
     ],
     bbbProof: 'https://www.bbb.org/us/nj/brick/profile/garage-doors/garage-door-masters-llc-0221-90197097'
+
   },
   plugins: [
     `gatsby-plugin-image`,
