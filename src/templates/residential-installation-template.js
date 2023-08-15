@@ -63,6 +63,7 @@ export const query = graphql`
             placeholder: BLURRED
             quality: 50
             resizingBehavior: SCALE
+            sizes: "1920,1440,720,520"
           )
         }
       }

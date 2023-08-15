@@ -48,9 +48,10 @@ export const query = graphql`
             jpegProgressive: true
             layout: FULL_WIDTH
             outputPixelDensities: 1.5
-            quality: 60
-            placeholder: BLURRED
+            quality: 50
+            placeholder: TRACED_SVG
             resizingBehavior: SCALE
+            sizes: "1920,1440,720,520"
           )
         }
       }

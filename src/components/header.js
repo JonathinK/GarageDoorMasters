@@ -34,7 +34,7 @@ const Header = () => {
             src="../images/Logo.png"
             alt="Garage Door Masters Logo"
             placeholder="blurred"
-            quality={60}
+            quality={30}
           />
       </LogoWrapper>
       </NavLink>

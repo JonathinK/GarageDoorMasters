@@ -58,9 +58,10 @@ export const query = graphql`
             jpegProgressive: true
             layout: FULL_WIDTH
             outputPixelDensities: 1.5
-            quality: 60
+            quality: 50
             placeholder: BLURRED
             resizingBehavior: SCALE
+            sizes: "1920,1440,720,520"
           )
         }
       }

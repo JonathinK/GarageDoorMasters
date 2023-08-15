@@ -11,7 +11,6 @@ const { Helmet } = require("gatsby");
 exports.wrapRootElement = ({ element }) => {
   return(
     <ThemeProvider theme={mainTheme}>
-
     <GlobalStyles/>
       {element}
     </ThemeProvider>    
@@ -21,7 +20,7 @@ exports.wrapRootElement = ({ element }) => {
 //Wraps every page with layout
 exports.wrapPageElement = ({ element, props}) => {
   return(
-    <Layout {...props}>
+    <Layout {...props}>    
       {element}
     </Layout>
   )

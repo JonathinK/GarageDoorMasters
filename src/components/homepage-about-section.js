@@ -99,9 +99,10 @@ export const query = graphql`
         gatsbyImageData(
           cropFocus: CENTER
           layout: FULL_WIDTH
-          quality: 100
+          quality: 80
           placeholder: BLURRED
           resizingBehavior: SCALE
+          sizes: "1920,1440,720,375"
         )
       }
     }

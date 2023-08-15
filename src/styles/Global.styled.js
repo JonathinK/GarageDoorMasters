@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-weight: normal;
+    font-family: "Helvetica Neue",Helvetica;
     margin: 0;
     word-wrap: break-word;
     height: 100%;

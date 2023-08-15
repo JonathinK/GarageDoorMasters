@@ -56,8 +56,9 @@ export const query = graphql`
             layout: FULL_WIDTH
             outputPixelDensities: 1.5
             placeholder: BLURRED
-            quality: 70
+            quality: 50
             resizingBehavior: SCALE
+            sizes: "1920,1440,720,520"
           )
         }
       }

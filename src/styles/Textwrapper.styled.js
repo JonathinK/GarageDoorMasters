@@ -18,7 +18,21 @@ export const TextWrapper = styled.div`
     padding: 0em 2.5em;
     gap: 1.5em;
     text-shadow: 0em .1em .3em black;
-    max-width: 542px;
+    max-width: 550px;
+    
+    div > p{
+      font-size: ${({theme}) => theme.fontSize.h5};
+    }
+    @media ${({theme}) => theme.sizes.tablet}{
+      div > p{
+      font-size: ${({theme}) => theme.fontSize.milli};
+    }
+    }
+    @media ${({theme}) => theme.sizes.tablet}{
+      div > p{
+      font-size: ${({theme}) => theme.fontSize.micro};
+    }
+    }
   `}
 
   ${props => props.ServicesText && css`
