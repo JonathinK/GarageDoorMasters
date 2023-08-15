@@ -9,7 +9,7 @@ export const HitYourDoor = ({section}) => {
     (component) => 
       component.internalName === "Component: Hit Door Text"
   )
-  const SectionImage = getImage(section.content.find(component => component.internalName === "Component: Hit Door Image").sectionImage);
+  const SectionImage = getImage(section.content.find(component => component.internalName === "Component: Hit Door Image").hitDoorImage);
 
   return(
     <Section SectionGrid HitDoor
@@ -40,6 +40,7 @@ export const HitYourDoor = ({section}) => {
           image={SectionImage}
           alt=""
           className="image-fit"
+          loading="lazy"
         />
       </ImageWrapper>
     </Section>
@@ -65,7 +66,7 @@ export const query = graphql`
           id
           contentful_id
           internalName
-          sectionImage:image {
+          hitDoorImage:image {
             contentful_id
             gatsbyImageData(
               cropFocus: CENTER
@@ -74,6 +75,7 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 50
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }

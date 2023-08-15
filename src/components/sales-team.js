@@ -80,6 +80,7 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 50
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }

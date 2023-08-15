@@ -58,6 +58,7 @@ export const query = graphql`
             placeholder: BLURRED
             resizingBehavior: SCALE
             sizes: "1920,1440,720,520"
+            formats: [WEBP,AUTO]
           )
         }
       }

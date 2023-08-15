@@ -25,7 +25,7 @@ export const ResidentialLearningTheSystem = ({ section }) => {
         XLC="1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"  
         XLR="1/3"  LR="1/3"  MR="1/3"  SR="1/3" XSR="1/2"
       >
-        <GatsbyImage image={BackgroundImage} className='fullWidth' alt=""/>
+        <GatsbyImage image={BackgroundImage} className='fullWidth' alt="" loading='lazy'/>
       </ImageWrapper>
       {RenderedComponents.map((component) => {
         return(
@@ -70,6 +70,7 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 100
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }
@@ -100,6 +101,7 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 60
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }

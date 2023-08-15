@@ -53,6 +53,7 @@ export const HelpingHomeownersSection = ({section}) => {
                 <GatsbyImage 
                   image={getImage(brand)}
                   alt="Opener Brands"
+                  loading='eager'
                 />
               </Product>
             )
@@ -92,6 +93,7 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 70
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }

@@ -31,6 +31,7 @@ export const ProductsList = ({ section }) => {
               imgClassName='product-image'
               image={getImage(image)}
               alt=""
+              loading="eager"
             />
           </Product>
         ))}
@@ -82,6 +83,7 @@ export const query = graphql`
             resizingBehavior: SCALE
             aspectRatio: 3
             width: 200
+            formats: [WEBP,AUTO]
           )
         }
       }

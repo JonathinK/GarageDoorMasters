@@ -57,7 +57,7 @@ export const GalleryComponent = ({ section, page }) => {
               hide={index < indexOfFirstImage || index >= indexOfLastImage}
               onClick={() => handleImageClick(image)}
             >
-              <GatsbyImage image={imgData} alt="" className="image" />
+              <GatsbyImage image={imgData} alt="" className="image" loading='eager' />
             </ImageWrapper>
           );
         })}
@@ -120,6 +120,7 @@ fragment ImageGallery on ContentfulComponentSection{
               placeholder: BLURRED
               quality: 60
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }

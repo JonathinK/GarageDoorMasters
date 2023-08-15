@@ -33,6 +33,7 @@ export const ServicesCard = ({ content, cardIcon }) => {
             image={getImage(content.image)}
             alt=""
             className="image-fit"
+            loading='lazy'
           />
         </ImageWrapper>
       )}

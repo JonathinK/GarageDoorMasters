@@ -195,6 +195,7 @@ export const query = graphql`
           quality: 100
           placeholder: BLURRED
           resizingBehavior: SCALE
+          formats: [WEBP,AUTO]
         )
       }
     }

@@ -60,6 +60,7 @@ export const query = graphql`
             quality: 50
             resizingBehavior: SCALE
             sizes: "1920,1440,720,520"
+            formats: [WEBP,AUTO]
           )
         }
       }

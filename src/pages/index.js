@@ -71,6 +71,7 @@ export const query = graphql`
             layout: FULL_WIDTH
             cropFocus: CENTER
             sizes: "1920,1440,720,375"
+            formats: [WEBP,AUTO]
           )
         }
       }

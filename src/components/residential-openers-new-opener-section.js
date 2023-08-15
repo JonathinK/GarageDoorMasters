@@ -52,7 +52,7 @@ export const NewOpenerSection = ({ section }) => {
         XSC="2/4"
         XSR="2/3"
       >
-        <GatsbyImage image={Image_1} className="Image-Fit" alt=""/>
+        <GatsbyImage image={Image_1} className="Image-Fit" alt="" loading="eager"/>
       </ImageWrapper>
       {/* Image 2 */}
       <ImageWrapper NewOpener className='up'
@@ -67,7 +67,7 @@ export const NewOpenerSection = ({ section }) => {
         XSC="4/6"
         XSR="3/4"
       >
-        <GatsbyImage image={Image_2} className="Image-Fit" alt=""/>
+        <GatsbyImage image={Image_2} className="Image-Fit" alt="" loading='eager'/>
       </ImageWrapper>
       <ImageWrapper OpenerPng
         XLC="10/14"
@@ -81,7 +81,7 @@ export const NewOpenerSection = ({ section }) => {
         XSC="3/6"
         XSR="2/3"
       >
-        <GatsbyImage image={Image_3} alt=""/>
+        <GatsbyImage image={Image_3} alt="" loading='eager'/>
       </ImageWrapper>
       {/* Image 2 */}
       <ImageWrapper OpenerPng
@@ -96,7 +96,7 @@ export const NewOpenerSection = ({ section }) => {
         XSC="2/5"
         XSR="3/4"
       >
-        <GatsbyImage image={Image_4} alt=""/>
+        <GatsbyImage image={Image_4} alt="" loading='eager'/>
       </ImageWrapper>
     </Section>
   )
@@ -132,6 +132,7 @@ export const query = graphql`
               placeholder: BLURRED
               resizingBehavior: SCALE
               quality:70
+              formats: [WEBP,AUTO]
             )
           }
       }

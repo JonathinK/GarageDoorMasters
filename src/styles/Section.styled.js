@@ -337,7 +337,7 @@ export const Section = styled.section`
     grid-template-columns: inherit;
     background:${({theme}) => theme.colors.body};
     gap: 0em 2em;
-    padding: 5em 0em;
+    padding: 10em 0em;
     overflow: hidden;
     
     @media ${({theme}) => theme.sizes.largeTablet}{

@@ -40,6 +40,7 @@ export const DoorRepair = ({section}) => {
           image={SectionImage}
           alt=""
           className="image-fit"
+          loading="lazy"
         />
       </ImageWrapper>
     </Section>

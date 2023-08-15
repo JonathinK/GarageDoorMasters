@@ -68,6 +68,7 @@ ${props => props.PanelImagesSvg && css`
   max-height:100%;
   justify-self:end;
   align-self:end;
+  transform: translateY(-1px);
 
   @media ${({theme}) => theme.sizes.largeTablet}{
     max-height: 50%;

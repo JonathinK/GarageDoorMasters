@@ -42,7 +42,10 @@ export const ImagesPanel = ({ section }) => {
         XLC="2/6" LC="2/6" MC="2/5" SC="1/5" XSC="1/4"
         XLR="2/3" LR="2/3" MR="2/3" SR="2/3" XSR="2/3"
       >
-        <GatsbyImage image={Image_1} className='image-fit' alt=""/>
+        <GatsbyImage image={Image_1} className='image-fit' 
+        alt=""
+        loading="lazy"
+        />
       </ImageWrapper> 
       <ImageWrapper 
         ImagePanelSmall
@@ -56,7 +59,7 @@ export const ImagesPanel = ({ section }) => {
         XLC="5/11" LC="5/11" MC="4/8" SC="2/8" XSC="2/6"
         XLR="2/3"  LR="2/3"  MR="2/3" SR="3/4" XSR="3/4"
       >
-        <GatsbyImage image={Image_2} className='image-fit' alt=""/>
+        <GatsbyImage image={Image_2} className='image-fit' alt="" loading='lazy'/>
       </ImageWrapper> 
      
     </Section>
@@ -89,6 +92,7 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 50
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }

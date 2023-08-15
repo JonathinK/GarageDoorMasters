@@ -54,6 +54,7 @@ export const query = graphql`
             placeholder: DOMINANT_COLOR
             resizingBehavior: SCALE
             sizes: "1920,1440,720,520"
+            formats: [WEBP,AUTO]
           )
         }
       }

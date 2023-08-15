@@ -29,7 +29,7 @@ export const GenieDealerSection = ({section}) => {
       XSC="1/7"
       XSR="1/3"
     >
-      <GatsbyImage image={GenieImage} className="genie" alt=""/>
+      <GatsbyImage image={GenieImage} className="genie" alt="" loading='lazy'/>
     </ImageWrapper>
     
       {ComponentRender.map((component) => {
@@ -73,6 +73,7 @@ export const GenieDealerSection = ({section}) => {
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen
+        loading='lazy'
        />
       </Video>
     </Section>
@@ -100,6 +101,7 @@ export const query = graphql`
               resizingBehavior: SCALE
               quality: 70
               cornerRadius: 10
+              formats: [WEBP,AUTO]
             )
           }
         }

@@ -34,7 +34,7 @@ export const ResidentialInstallationServices = ({ section }) => {
         )
       })}
       {/*Cards Render Component*/}
-      <CardsWrapper CommercialServiceCards>
+      <CardsWrapper ResidentialServiceCards>
         {ResidentialServicesCards.map((card) => {
         return(
           <ServicesCard content={card} key={card.contentful_id}/>
@@ -76,6 +76,7 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 60
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }

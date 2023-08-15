@@ -29,6 +29,7 @@ export const TimeToService = ({section}) => {
           image={BackgroundImage}
           className="fullWidth colored-overlay"
           imgClassName='img-style'
+          loading='lazy'
         />
       </ImageWrapper>
       {/*Top Level Content That Sits Over The Background Image*/}{TextRender.map((component) => {
@@ -52,6 +53,7 @@ export const TimeToService = ({section}) => {
           image={JumpedCable}
           alt=""
           className="image-fit"
+          loading="lazy"
         />
       </ImageWrapper>
       <ImageWrapper SingleImage
@@ -62,6 +64,7 @@ export const TimeToService = ({section}) => {
           image={FrayedCable}
           alt=""
           className='image-fit'
+          loading="lazy"
         />
       </ImageWrapper>
       <Symptoms
@@ -110,6 +113,7 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 50
               resizingBehavior: SCALE
+              formats: [WEBP,AUTO]
             )
           }
         }

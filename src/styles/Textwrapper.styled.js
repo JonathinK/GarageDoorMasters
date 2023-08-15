@@ -284,6 +284,26 @@ export const TextWrapper = styled.div`
 
         
       }
+  `} 
+  ${props => props.AssuranceText && css` 
+      flex: 1 1 50%;
+
+      @media ${({theme}) => theme.sizes.desktop}{
+      
+      }
+
+      @media ${({theme}) => theme.sizes.largeTablet}{
+    
+      }
+      
+      @media ${({theme}) => theme.sizes.tablet}{
+       
+      }
+
+      @media ${({theme}) => theme.sizes.mobile}{
+
+        
+      }
   `}
 
 

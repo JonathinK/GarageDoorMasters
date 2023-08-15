@@ -46,21 +46,6 @@ export const query = graphql`
           raw
         }
       }
-      ... on ContentfulComponentImage {
-      id
-      title
-      internalName
-      slug
-      sectionImage:image{
-        gatsbyImageData(
-          cropFocus: CENTER
-          layout: FULL_WIDTH
-          quality: 100
-          placeholder: BLURRED
-          resizingBehavior: SCALE
-        )
-      }
-    }
     }
   }
 `

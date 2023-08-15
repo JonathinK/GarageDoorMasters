@@ -27,9 +27,10 @@ export const AssuranceSection = ({section}) => {
                 <GatsbyImage
                   image={AssuranceImage}
                   alt="Assurance Image"
+                  loading='lazy'
                 />
               </ImageWrapper>
-              <TextWrapper>
+              <TextWrapper AssuranceText>
                 <SubTitle
                   variant='primary'
                   Assurance
@@ -62,9 +63,9 @@ export const query = graphql`
               placeholder: BLURRED
               outputPixelDensities: 1.5
               jpegProgressive: false
-              layout: CONSTRAINED
-              width: 120
+              layout: FULL_WIDTH
               quality: 100
+              formats: [WEBP,AUTO]
             )
           }
         }

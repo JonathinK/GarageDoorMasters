@@ -1,26 +1,26 @@
-const React = require("react")
-const { ThemeProvider } = require("styled-components");
-const { default: Layout } = require("./src/components/layout");
-const { GlobalStyles } = require("./src/styles/Global.styled");
-const { mainTheme } = require("./src/themes/Theme");
-const { Helmet } = require("gatsby");
+import React from 'react';  
+import { ThemeProvider } from "styled-components";
+import  Layout  from "./src/components/layout";
+import { GlobalStyles }  from "./src/styles/Global.styled";
+import { mainTheme } from './src/themes/Theme';
+import "./src/fonts/fonts.css"
 
 // Makes the theme available to the entire application
 // Also in the future i will implement a feature to change the theme to lighter colors
 // Always wrap the root element before you wrap the page element
-exports.wrapRootElement = ({ element }) => {
+export const wrapRootElement = ({ element }) => {
   return(
     <ThemeProvider theme={mainTheme}>
-    <GlobalStyles/>
       {element}
     </ThemeProvider>    
   )
 }
 
 //Wraps every page with layout
-exports.wrapPageElement = ({ element, props}) => {
+export const wrapPageElement = ({ element, props}) => {
   return(
-    <Layout {...props}>    
+    <Layout {...props}> 
+    <GlobalStyles/>   
       {element}
     </Layout>
   )
@@ -36,6 +36,6 @@ exports.wrapPageElement = ({ element, props}) => {
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
-exports.onRenderBody = ({ setHtmlAttributes }) => {
+export const onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `en` })
 }

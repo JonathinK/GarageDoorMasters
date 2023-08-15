@@ -98,6 +98,9 @@ export const SubTitle = styled.h3`
     &.red-color{
       color: ${({theme}) => theme.colors.grey};
     }
+    @media ${({theme}) => theme.sizes.mobile}{
+      font-size: ${({theme}) => theme.fontSize.milli};
+    }
   `}
   ${props => props.FeatureCardTitle && css`
     font-size: ${({theme}) => theme.fontSize.h3};

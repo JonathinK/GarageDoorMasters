@@ -385,9 +385,8 @@ export const ImageWrapper = styled.div`
       height:auto;
   `}
   ${props => props.AssuranceImage && css` 
-     width: 120px;
-     height: 120px;
-     aspect-ratio: 1/1;
+     width:120px;
+     flex:  1 120px;
   `}
   ${props => props.BigTextImage && css` 
      position: relative;
@@ -457,7 +456,6 @@ export const ImageWrapper = styled.div`
   ${props => props.ContactUsImage && css`
     position:relative;
     overflow:hidden;
-    scale: 1;
     height:165%;
     transform:translateY(-5em);
     
@@ -479,7 +477,7 @@ export const ImageWrapper = styled.div`
       top:0;
       width:100%;
       height:100%;
-      background-image: linear-gradient(to bottom,${({theme}) => theme.colors.body},hsla(0,100%,100%,.1),${({theme}) => theme.colors.body} 85%);
+      background-image: linear-gradient(to bottom,${({theme}) => theme.colors.body}  ,hsla(0,100%,100%,0) 50%,${({theme}) => theme.colors.body} 95%);
     }
 
    .full-width{
