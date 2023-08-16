@@ -11,7 +11,7 @@ export const GalleryComponent = ({ section, page }) => {
   const imagesPerPage = 12;
   // Render Filter For Gallery Image
   const GalleryRender = section.content.find(
-    (gallery) =>
+    gallery =>
       gallery.internalName === 'Component: Door Gallery'
   );
   // If statement to return null if there is no Gallery
