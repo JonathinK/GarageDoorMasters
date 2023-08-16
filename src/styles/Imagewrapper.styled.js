@@ -333,18 +333,25 @@ export const ImageWrapper = styled.div`
   ${props => props.GalleryImage && css` 
       flex: 1 1 20%;
       min-width: 200px;
+      aspect-ratio: 1.5;
       border-radius: .5em;
       overflow: hidden;
-      box-shadow: 0em 1em 1em -.5em rgba(0,0,0,.33);
+      position: relative;
       opacity: 0;
       animation: ${fadeIn} 0.8s ease-in-out forwards;
       animation-delay: ${props => (props.index + 1) * 100}ms;
       cursor: pointer;
+      background:white;
       ${props =>
         props.hide &&
         css`
           opacity: 0;
         `}
+        .image{
+          position:absolute;
+          width: 100%;
+          height: 100%;
+        }
      
   @media ${({theme}) => theme.sizes.hover}{ 
     transition: all 1s ease-in-out;
@@ -352,6 +359,8 @@ export const ImageWrapper = styled.div`
       transition: all 1s ease-in-out;
     }
     :hover {
+      box-shadow: 0em .5em .5em 0em rgba(0,0,0,.33),
+                  0em 1em 1em 0em rgba(0,0,0,.22);
       .image{
         transform: scale(1.2);
       }
