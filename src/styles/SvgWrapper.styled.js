@@ -53,6 +53,7 @@ export const SvgWrapper = styled.div`
   }
 
   &.absolute-position-top{
+    transform: translateY(-2px);
     svg{
       .top{
         fill:${({theme}) => theme.colors.primaryblue};
@@ -119,6 +120,9 @@ ${props => props.navigationSvg && css`
   @media ${({theme}) => theme.sizes.tablet}{
     max-height: 200px;
   }
+`}
+${props => props.FooterSvg && css` 
+  transform: translateY(-1px);
 `}
 
   @media ${({theme}) => theme.sizes.largeDesktop}{

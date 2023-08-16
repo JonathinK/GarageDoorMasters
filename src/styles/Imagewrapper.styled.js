@@ -3,6 +3,9 @@ import { SpringCard } from "./SpringsCard.styled";
 
 export const ImageWrapper = styled.div`
   overflow:hidden;
+  img{
+    border-radius:1em;
+  }
   ${props => props.AboutBackground && css` 
     position:relative;
     opacity: .25;
@@ -203,7 +206,9 @@ export const ImageWrapper = styled.div`
     justify-self:stretch;
     align-self: stretch;
     overflow: visible;
-
+    img{
+      border-radius: 0;
+    }
     .genie{ 
       mix-blend-mode: screen;
       opacity: .4;
@@ -477,7 +482,7 @@ export const ImageWrapper = styled.div`
       top:0;
       width:100%;
       height:100%;
-      background-image: linear-gradient(to bottom,${({theme}) => theme.colors.body}  ,hsla(0,100%,100%,0) 50%,${({theme}) => theme.colors.body} 95%);
+      background-image: linear-gradient(to bottom,${({theme}) => theme.colors.body} 1% ,hsla(0,100%,100%,0) 50%,${({theme}) => theme.colors.body} 95%);
     }
 
    .full-width{

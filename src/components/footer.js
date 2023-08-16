@@ -52,6 +52,7 @@ const Footer = () => {
       SR="1/2"
       XSC="1/7"
       XSR="1/2"
+      FooterSvg
       > 
         <FooterSvg/>
       </SvgWrapper>
