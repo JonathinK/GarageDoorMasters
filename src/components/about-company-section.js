@@ -53,6 +53,7 @@ export const AboutGdmSection = ({ section }) => {
           image={AboutImage}
           className='image-size'
           alt="Gdm Logo"
+          loading="eager"
         />
       </ImageWrapper>     
     {/* Owner Text And Image*/}
@@ -65,6 +66,7 @@ export const AboutGdmSection = ({ section }) => {
           image={OwnerImage}
           alt="Company Owner Jeff Wardell"
           className='image-size'
+          loading='eager'
         />
       </ImageWrapper>
       {OwnerContent.map((component) => {

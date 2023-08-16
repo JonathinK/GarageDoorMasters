@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { ImageGalleryWrapper, ImageWrapper, Section,Button, PaginationWrapper } from '../styles';
+import { ImageGalleryWrapper, ImageWrapper, Section, PaginationWrapper } from '../styles';
 import { graphql } from 'gatsby';
 import { GatsbyImage,getImage} from 'gatsby-plugin-image';
 import { Lightbox } from './lightbox';
@@ -87,13 +87,13 @@ const Pagination = ({ imagesPerPage, totalImages, paginate, currentPage }) => {
     <PaginationWrapper className="pagination">
       {pageNumbers.map((number) => (
         <li key={number}>
-          <Button
+          <button
             onClick={() => paginate(number)}
             disabled={currentPage === number}
             className={currentPage === number ? 'active' : ''}
           >
             {number}
-          </Button>
+          </button>
         </li>
       ))}
     </PaginationWrapper>

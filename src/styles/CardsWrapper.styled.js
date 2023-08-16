@@ -328,8 +328,9 @@ export const CardsWrapper = styled.div`
     }
     }@media ${({theme}) => theme.sizes.mobile}{
       grid-column: 2/6;
-      flex-flow: column nowrap;
+      flex-flow: column wrap;
       align-items: center;
+      justify-content:stretch;
       ${ServiceCard}{
           width: 100%;
           padding: 0;

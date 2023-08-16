@@ -44,7 +44,7 @@ export const ImagesPanel = ({ section }) => {
       >
         <GatsbyImage image={Image_1} className='image-fit' 
         alt=""
-        loading="lazy"
+        loading="eager"
         />
       </ImageWrapper> 
       <ImageWrapper 
@@ -53,13 +53,13 @@ export const ImagesPanel = ({ section }) => {
         XLC="10/14" LC="10/14" MC="7/10" SC="5/9" XSC="4/7"
         XLR="2/3"   LR="2/3"   MR="2/3"  SR="4/5" XSR="4/5" 
       >
-        <GatsbyImage image={Image_3} className='image-fit' alt=""/>
+        <GatsbyImage image={Image_3} className='image-fit' alt="" loading='eager'/>
       </ImageWrapper>
       <ImageWrapper ImagePanelLarge
         XLC="5/11" LC="5/11" MC="4/8" SC="2/8" XSC="2/6"
         XLR="2/3"  LR="2/3"  MR="2/3" SR="3/4" XSR="3/4"
       >
-        <GatsbyImage image={Image_2} className='image-fit' alt="" loading='lazy'/>
+        <GatsbyImage image={Image_2} className='image-fit' alt="" loading='eager'/>
       </ImageWrapper> 
      
     </Section>

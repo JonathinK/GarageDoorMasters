@@ -4,7 +4,7 @@ import { SpringCard } from "./SpringsCard.styled";
 export const ImageWrapper = styled.div`
   overflow:hidden;
   img{
-    border-radius:1em;
+    border-radius:inherit;
   }
   ${props => props.AboutBackground && css` 
     position:relative;
@@ -339,7 +339,7 @@ export const ImageWrapper = styled.div`
       opacity: 0;
       animation: ${fadeIn} 0.8s ease-in-out forwards;
       animation-delay: ${props => (props.index + 1) * 100}ms;
-
+      cursor: pointer;
       ${props =>
         props.hide &&
         css`
@@ -392,6 +392,9 @@ export const ImageWrapper = styled.div`
   ${props => props.AssuranceImage && css` 
      width:120px;
      flex:  1 120px;
+     img{
+      border-radius: inherit;
+     }
   `}
   ${props => props.BigTextImage && css` 
      position: relative;

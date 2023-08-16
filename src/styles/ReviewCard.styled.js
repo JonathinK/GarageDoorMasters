@@ -19,12 +19,24 @@ export const ReviewCardWrapper = styled.div`
     li{
       list-style: none;
       button{
-        transition: border 0.3s ease-in-out;
-        border:none;
-      }
-      button.active{
-        border: 1px solid ${({theme}) => theme.colors.accentred};
-      }
+          padding: .5em 1em;
+          border-radius: .25em;
+          border:none;
+          font-family: ${({theme}) => theme.fonts.mono};
+          background: transparent;
+          color: ${({theme}) => theme.colors.primaryblue};
+          box-shadow: none;
+          transition: all .5s ease-in-out;
+          border: 1px solid ${({theme}) => theme.colors.primaryblue};
+          cursor: pointer;
+          &.active{
+            background: ${({theme}) => theme.colors.body};
+            color: ${({theme}) => theme.colors.grey};
+            box-shadow: 0em .25em .25em 0em rgba(0,0,0,.33),
+                        0em .25em .5em 0em rgba(0,0,0,.22);
+            border: 1px solid ${({theme}) => theme.colors.body};
+          }
+        }
     }
   }
   @media ${({theme}) => theme.sizes.largeTablet}{

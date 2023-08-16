@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Section, ReviewCardWrapper, Button } from '../styles';
+import { Section, ReviewCardWrapper } from '../styles';
 import { graphql } from 'gatsby';
 import { ReviewComponent } from './review-card';
 
@@ -50,13 +50,13 @@ const Pagination = ({ reviewsPerPage, totalReviews, paginate, currentPage }) => 
     <ul className="pagination">
       {pageNumbers.map((number,index) => (
         <li key={index}>
-          <Button 
+          <button 
             onClick={() => paginate(number)} 
             disabled={currentPage === number}
             className={currentPage === number ? 'active' : ''}
           >
             {number}
-          </Button>
+          </button>
         </li>
       ))}
     </ul>
