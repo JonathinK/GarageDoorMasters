@@ -211,7 +211,8 @@ export const CardsWrapper = styled.div`
       
       ${ServiceCard}{
         padding: 0;
-        flex-flow: column nowrap;
+        flex-flow: column wrap;
+        flex: 1 1 100%;
         ${ImageWrapper}{
           flex: 2 1 200px;
           max-height: 200px;
