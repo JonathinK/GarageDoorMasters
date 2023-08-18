@@ -28,6 +28,7 @@ export const HomepageReviews= ({section}) => {
     <SvgWrapper
       XLC="1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"
       XLR="1/2" LR="1/2" MR="1/2" SR="1/2" XSR="1/2"
+      ReviewsSvg
     >
       <PageWave/>
     </SvgWrapper>

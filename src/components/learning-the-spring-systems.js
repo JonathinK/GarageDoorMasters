@@ -25,7 +25,7 @@ export const ResidentialLearningTheSystem = ({ section }) => {
         XLC="1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"  
         XLR="1/3"  LR="1/3"  MR="1/3"  SR="1/3" XSR="1/2"
       >
-        <GatsbyImage image={BackgroundImage} className='fullWidth' alt="" loading='lazy'/>
+        <GatsbyImage image={BackgroundImage} className='fullWidth' alt="" loading='eager'/>
       </ImageWrapper>
       {RenderedComponents.map((component) => {
         return(
@@ -68,9 +68,11 @@ export const query = graphql`
               layout: FULL_WIDTH
               outputPixelDensities: 2
               placeholder: BLURRED
-              quality: 100
+              quality: 70
               resizingBehavior: SCALE
-              formats: [WEBP,AUTO]
+              formats: [WEBP,AUTO,AVIF]
+              breakpoints: [430,768,1024,1920]
+              sizes: "(max-width: 720px) 100vw, 1920px"
             )
           }
         }
@@ -101,7 +103,9 @@ export const query = graphql`
               placeholder: BLURRED
               quality: 60
               resizingBehavior: SCALE
-              formats: [WEBP,AUTO]
+              formats: [WEBP,AUTO,AVIF]
+              breakpoints: [430,768,1024,1920]
+              sizes: "(max-width: 720px) 100vw, 400px"
             )
           }
         }

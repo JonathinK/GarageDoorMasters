@@ -258,6 +258,7 @@ export const Section = styled.section`
     }
   `}
   ${props => props.SalesTeam && css` 
+    background: ${({theme}) => theme.colors.primaryblue};
     background-image: linear-gradient(to bottom, hsla(213,81%,21%,1) 10%,hsla(213,81%,21%,.6) 100%);
   `} 
   /***Residential Repair***/

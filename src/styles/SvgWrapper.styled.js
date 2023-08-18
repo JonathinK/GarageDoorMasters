@@ -124,6 +124,9 @@ ${props => props.navigationSvg && css`
 ${props => props.FooterSvg && css` 
   transform: translateY(-1px);
 `}
+${props => props.ReviewsSvg && css` 
+  transform: translateY(-1px);
+`}
 
   @media ${({theme}) => theme.sizes.largeDesktop}{
     grid-row: ${props => props.XLR};

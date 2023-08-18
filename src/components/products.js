@@ -79,11 +79,13 @@ export const query = graphql`
           gatsbyImageData(
             quality: 50
             placeholder: BLURRED
-            layout: CONSTRAINED
+            layout: FULL_WIDTH
             resizingBehavior: SCALE
             aspectRatio: 3
             width: 200
             formats: [WEBP,AUTO]
+            breakpoints: [430,768,1024,1920]
+            sizes: "(max-width: 720px) 150px, 200px"
           )
         }
       }

@@ -15,7 +15,6 @@ export const Hero = ({ data }) => {
           alt=""
           className='background-fit'
           loading='eager'
-          fadein='false'
         />
       </HeroImage>
       <TextWrapper HeroText

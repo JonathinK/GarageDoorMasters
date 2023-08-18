@@ -26,6 +26,7 @@ export const HomePageAbout = ({ section }) => {
         image={BgImage}
         className='full-width-background'
         alt=''
+        loading='lazy'
       />
     </ImageWrapper>
     {/* Text Block */}
@@ -64,6 +65,7 @@ export const HomePageAbout = ({ section }) => {
         image={Image}
         alt=""
         className='image-fit'
+        loading='lazy'
       />
     </ImageWrapper>
     </Section>
@@ -102,8 +104,9 @@ export const query = graphql`
           quality: 80
           placeholder: BLURRED
           resizingBehavior: SCALE
-          sizes: "1920,1440,720,375"
-          formats: [ WEBP, AUTO]
+          sizes: "(max-width: 720px) 100vw, 800px"
+          breakpoints: [430,768,1024,1920]
+          formats: [ WEBP, AUTO, AVIF]
         )
       }
     }

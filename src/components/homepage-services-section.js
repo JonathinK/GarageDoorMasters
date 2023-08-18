@@ -193,9 +193,12 @@ export const query = graphql`
           cropFocus: CENTER
           layout: FULL_WIDTH
           quality: 100
+          outputPixelDensities: 1
           placeholder: BLURRED
           resizingBehavior: SCALE
-          formats: [WEBP,AUTO]
+          formats: [WEBP,AUTO,AVIF]
+          breakpoints: [430,768,1024,1920]
+          sizes: "(max-width:720) 100vw, 736px"
         )
       }
     }

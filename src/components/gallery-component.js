@@ -120,7 +120,9 @@ fragment ImageGallery on ContentfulComponentSection{
               placeholder: BLURRED
               quality: 60
               resizingBehavior: SCALE
-              formats: [WEBP,AUTO]
+              formats: [WEBP,AUTO,AVIF]
+              breakpoints: [430,768,1024,1920]
+              sizes: "(max-width: 720px) 100vw, 320px"
             )
           }
         }

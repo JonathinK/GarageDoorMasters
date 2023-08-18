@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { SocialsWrapper } from "./SocialLinks.styled";
+import { Hamburger } from "./Nav.styled";
 
 
 
@@ -17,6 +18,10 @@ export const HeaderContainer = styled.header`
   @media ${({theme}) => theme.sizes.largeTablet}{
     gap: .5em 1.5em;
     grid-template-rows: 48px 80px;
+    ${Hamburger}{
+      background:${({scrolled}) => scrolled ? "" : "transparent"};
+      transition:${({scrolled}) => scrolled ? "background .5s ease-in .5s" : "background .1s ease-out"};
+    }
   }@media ${({theme}) => theme.sizes.tablet}{
     gap: .5em 1em;
     grid-template-rows: 48px 64px;

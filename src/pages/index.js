@@ -70,8 +70,9 @@ export const query = graphql`
             quality: 50
             layout: FULL_WIDTH
             cropFocus: CENTER
-            sizes: "1920,1440,720,375"
-            formats: [WEBP,AUTO]
+            sizes: "(max-width: 720px) 100vw, (max-width: 1920px) 1920px, (min-width: 2560px) 2560px"
+            breakpoints:[430,768,1024,1920]
+            formats: [WEBP,AUTO,AVIF]
           )
         }
       }

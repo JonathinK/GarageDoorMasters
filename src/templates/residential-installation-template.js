@@ -63,8 +63,9 @@ export const query = graphql`
             placeholder: BLURRED
             quality: 50
             resizingBehavior: SCALE
-            sizes: "1920,1440,720,520"
-            formats: [WEBP,AUTO]
+            sizes: "(max-width: 720px) 100vw, 1920px"
+            breakpoints:[430,768,1024,1920]
+            formats: [WEBP,AUTO,AVIF]
           )
         }
       }

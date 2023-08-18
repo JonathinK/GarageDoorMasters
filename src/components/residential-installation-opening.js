@@ -43,6 +43,7 @@ export const ResidentialNewDoor = ({ section }) => {
         image={Image1}
         className="image-fit"
         alt=""
+        loading='eager'
       />
     </ImageWrapper>
     <ImageWrapper LargeImage
@@ -53,6 +54,7 @@ export const ResidentialNewDoor = ({ section }) => {
         image={Image3}
         alt=""
         className="image-fit"
+        loading="eager"
       />
     </ImageWrapper>
     <ImageWrapper SmallImage
@@ -63,6 +65,7 @@ export const ResidentialNewDoor = ({ section }) => {
         image={Image2}
         className="image-fit"
         alt=""
+        loading="eager"
       />
     </ImageWrapper>
     <ImageWrapper SmallImage
@@ -73,6 +76,7 @@ export const ResidentialNewDoor = ({ section }) => {
         image={Image4}
         alt=""
         className="image-fit"
+        loading="eager"
       />
     </ImageWrapper>
     
@@ -106,6 +110,8 @@ export const query = graphql`
           layout: FULL_WIDTH
           quality: 100
           placeholder: BLURRED
+          sizes: "(max-width: 720px) 100vw, 480px"
+          breakpoints:[430,768,1024,1920]
           resizingBehavior: SCALE
         )
       }

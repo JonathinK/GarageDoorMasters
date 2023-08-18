@@ -34,9 +34,10 @@ const Header = () => {
             src="../images/Logo.png"
             alt="Garage Door Masters Logo"
             placeholder="blurred"
-            quality={30}
-            sizes='96,80,64,40'
-            breakpoints={['1920,1024,768,430']}
+            quality={50}
+            breakpoints={[430,768,1024,1920]}
+            formats={['auto','webp']}
+            layout='fullWidth'
           />
       </LogoWrapper>
       </NavLink>

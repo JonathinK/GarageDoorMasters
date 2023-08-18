@@ -436,9 +436,10 @@ export const ImageWrapper = styled.div`
     width:100%;
     justify-self: center;
     align-self:stretch;
+    background:${({theme}) => theme.colors.body}
     box-shadow: 0 1em 1em rgba(0,0,0,.33),
                 0 1.5em 1.5em rgba(0,0,0,.22);
-    border: 16px solid white;
+    border: 16px solid ${({theme}) => theme.colors.body};
     .image-fit{
       position:absolute;
       width:100%;
@@ -456,9 +457,10 @@ export const ImageWrapper = styled.div`
     justify-self: center;
     align-self:center;
     width:100%;
+    background:${({theme}) => theme.colors.body};
     box-shadow: 0 .5em .5em rgba(0,0,0,.33),
                 0 1em 1em rgba(0,0,0,.22);
-    border: 16px solid white;
+    border: 16px solid ${({theme}) => theme.colors.body};
     .image-fit{
       position:absolute;
       width:100%;
