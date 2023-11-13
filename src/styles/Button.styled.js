@@ -26,6 +26,7 @@ export const Button = styled.div`
       font-size: ${({theme}) => theme.fontSize.micro};
       font-weight: ${({theme}) => theme.fontweight.bold};
       text-align:center;
+      position: relative;
     }
   `}
 
