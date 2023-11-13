@@ -25,6 +25,7 @@ export const Button = styled.div`
       text-transform: ${({theme}) => theme.fontCasing.upper};
       font-size: ${({theme}) => theme.fontSize.micro};
       font-weight: ${({theme}) => theme.fontweight.bold};
+      text-align:center;
     }
   `}
 

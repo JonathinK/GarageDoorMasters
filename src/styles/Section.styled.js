@@ -12,7 +12,7 @@ export const Section = styled.section`
   `}
   ${props => props.HomepageAbout && css`
     background: ${({theme}) => theme.colors.primaryblue};
-    background-image: radial-gradient(closest-side at 75% 50%,hsla(213,22%,64%,1),hsla(213,81%,21%,1) );
+    background-image: radial-gradient(farthest-side at 160% 70%,hsla(213,22%,64%,1) 20%,hsla(213,81%,21%,1) 80% );
     grid-template-rows: 1fr;
     grid-template-columns: inherit;
     gap: 2em 1em;
@@ -20,7 +20,8 @@ export const Section = styled.section`
     overflow:hidden;
     padding: 5em 0;
     @media ${({theme}) => theme.sizes.tablet}{
-      background-image: radial-gradient(farthest-side at 10% 120%,hsla(213,22%,64%,.5) 30%,hsla(213,81%,21%,1) 100% );
+      background-image: radial-gradient(farthest-side at 20% 100%,hsla(213,22%,64%,.5
+      ) 10%,hsla(213,81%,21%,1) 100% );
       overflow:hidden;
     }
   `}
@@ -290,6 +291,9 @@ export const Section = styled.section`
   ${props => props.Contact && css`
     background:${({theme}) => theme.colors.body};
     overflow: hidden;
+  `}
+  ${props => props.Map && css`
+    background:${({theme}) => theme.colors.body};
   `}
   /***Reviews***/
   ${props => props.Reviews && css`

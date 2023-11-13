@@ -11,7 +11,7 @@ exports.createPages = async({actions,graphql,reporter}) => {
     }
   `);
   if (result.errors){
-    reporter.panic('Error loading events', JSON.stringify(result.errors));
+    reporter.panic('Error loading pages', JSON.stringify(result.errors));
   }
   result.data.allContentfulPage.nodes.forEach(service => {
     const {slug, internalName} = service;

@@ -18,5 +18,10 @@ export const ListItem = styled.li`
   padding: 1em 2em;
   flex: 1 1 auto;
   border-radius: .5em;
- 
+ @media ${({theme}) => theme.sizes.tablet}{
+  font-size: ${({theme}) => theme.fontSize.micro};
+ }
+ @media ${({theme}) => theme.sizes.tablet}{
+  font-size: ${({theme}) => theme.fontSize.nano};
+ }
 `

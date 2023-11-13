@@ -8,8 +8,8 @@ export const ImageWrapper = styled.div`
   }
   ${props => props.AboutBackground && css` 
     position:relative;
-    opacity: .25;
-    mix-blend-mode: overlay;
+    opacity: .30;
+    mix-blend-mode: multiply;
     top: -5em;
     height:calc(100% + 5em * 2);
 

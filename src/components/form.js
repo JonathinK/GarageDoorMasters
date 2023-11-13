@@ -9,6 +9,7 @@ export const PageForm = ({XLargeRow, XLargeCol, LargeCol, LargeRow, MedRow, MedC
       method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      netlify
     >
       <label>
         <input placeholder='Full Name' type="text" required/>

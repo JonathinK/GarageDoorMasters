@@ -101,7 +101,7 @@ export const query = graphql`
         gatsbyImageData(
           cropFocus: CENTER
           layout: FULL_WIDTH
-          quality: 80
+          quality: 100
           placeholder: BLURRED
           resizingBehavior: SCALE
           sizes: "(max-width: 720px) 100vw, 800px"

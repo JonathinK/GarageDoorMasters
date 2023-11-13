@@ -28,7 +28,7 @@ export default AreasWeService
 export const Head = ({ data }) => <Seo
   title={data.contentfulPage.seoMetadata.seoTitle}
   description={data.contentfulPage.seoMetadata.description}
-  canonical={data.contentfulPage.seoMetadata.canonical}
+  canonical={data.contentfulPage.seoMetadata.cannonical}
   keywords={data.contentfulPage.seoMetadata.keywords}
 /> 
 export const query = graphql`
@@ -48,7 +48,7 @@ export const query = graphql`
             jpegProgressive: true
             layout: FULL_WIDTH
             outputPixelDensities: 1.5
-            quality: 50
+            quality: 100
             placeholder: BLURRED
             resizingBehavior: SCALE
             sizes: "(max-width: 720px) 100vw, 1920px"
@@ -63,6 +63,7 @@ export const query = graphql`
         seoTitle
         description
         keywords
+        cannonical
         no_index
         no_follow
       }

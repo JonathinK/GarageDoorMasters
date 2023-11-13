@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const MapIframe = styled.iframe`
     width: 100%;
-    height: 60vh;
+    height: 40vh;
     border:none;
+    border-radius: .5em;
+    overflow: hidden; 
   /* Breakpoint Grid Position Prop Handling */
   @media ${({theme}) => theme.sizes.largeDesktop}{
     grid-row: ${props => props.XLR};

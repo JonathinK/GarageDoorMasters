@@ -29,7 +29,7 @@ export default ResidentialRepair
 export const Head = ({ data }) => <Seo
   title={data.contentfulPage.seoMetadata.seoTitle}
   description={data.contentfulPage.seoMetadata.description}
-  canonical={data.contentfulPage.seoMetadata.canonical}
+  canonical={data.contentfulPage.seoMetadata.cannonical}
   keywords={data.contentfulPage.seoMetadata.keywords}
 /> 
 export const query = graphql`
@@ -43,6 +43,7 @@ export const query = graphql`
         seoTitle
         description
         keywords
+        cannonical
         no_follow
         no_index
       }

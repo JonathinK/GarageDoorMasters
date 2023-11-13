@@ -36,7 +36,7 @@ const HomePage = ({ data }) => {
 export const Head = ({ data }) => <Seo
   title={data.contentfulLandingPage.seoMetadata.seoTitle}
   description={data.contentfulLandingPage.seoMetadata.description}
-  canonical={data.contentfulLandingPage.seoMetadata.canonical}
+  canonical={data.contentfulLandingPage.seoMetadata.cannonical}
   keywords={data.contentfulLandingPage.seoMetadata.keywords}
 /> 
 export const query = graphql`
@@ -47,6 +47,7 @@ export const query = graphql`
         seoTitle
         no_follow
         no_index
+        cannonical
         keywords
         description
       }

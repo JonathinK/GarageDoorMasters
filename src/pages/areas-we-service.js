@@ -28,7 +28,7 @@ export default AreasWeService
 export const Head = ({ data }) => <Seo
   title={data.contentfulPage.seoMetadata.seoTitle}
   description={data.contentfulPage.seoMetadata.description}
-  canonical={data.contentfulPage.seoMetadata.canonical}
+  canonical={data.contentfulPage.seoMetadata.cannonical}
   keywords={data.contentfulPage.seoMetadata.keywords}
 /> 
 
@@ -63,6 +63,7 @@ export const query = graphql`
         internalName
         seoTitle
         description
+        cannonical
         keywords
         no_index
         no_follow

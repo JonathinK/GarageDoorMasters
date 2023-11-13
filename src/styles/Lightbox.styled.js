@@ -26,7 +26,8 @@ export const LightBoxImage = styled.div`
   justify-content:center;
   align-items:center;
   height:100%;
-  width:95%;
+  width:90%;
+  max-width: 1300px;
   position:relative;
 `
 

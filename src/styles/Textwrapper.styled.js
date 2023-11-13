@@ -65,12 +65,12 @@ export const TextWrapper = styled.div`
     justify-content:flex-end;
     align-items: center;
     text-align:center;
-    padding: 5em 30%;
+    padding: 5em 10em;
     background:transparent;
     box-shadow: 0em 3em 4em -2.5em rgba(0,0,0,.33),
                 0em -3em 4em -2.5em rgba(0,0,0,.33);
     @media ${({theme}) => theme.sizes.largeTablet}{
-      padding: 5em 3em;
+      padding: 5em 2em;
     }
     @media ${({theme}) => theme.sizes.mobile}{
       padding: 3em 2em;
