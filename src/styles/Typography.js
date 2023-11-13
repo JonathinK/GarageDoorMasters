@@ -113,7 +113,7 @@ export const SubTitle = styled.h3`
     }
   `}
   ${props => props.SymptomSub && css`
-    color: ${({theme}) => theme.colors.headlineblue};
+    color: ${({theme}) => theme.colors.primaryblue};
     font-size: ${({theme}) => theme.fontSize.h4};
     @media ${({theme}) => theme.sizes.mobile}{
       font-size: ${({theme}) => theme.fontSize.h5};

@@ -165,21 +165,6 @@ export const ImageWrapper = styled.div`
     align-self:center;
     transform: scale(.8);
     filter: drop-shadow(1em 1em .5em rgba(0,0,0,.1));
-
-    :before{
-      content: '';
-      position: absolute;
-      z-index:0;
-      width:100%;
-      height:100%;
-      top: 0;
-      left:0;
-      background:${({theme}) => theme.colors.primaryblue_shade};
-      border-radius:  50%;
-      opacity: .2;
-      filter: blur(2em);
-      transform: scale(1.3);
-    }
   `}
   ${props => props.SymptomsImage && css`
     position: relative;

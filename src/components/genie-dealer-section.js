@@ -13,6 +13,7 @@ export const GenieDealerSection = ({section}) => {
     (component) => 
       component.internalName === 'Component: Genie Dealer Text'
   );
+
   return(
     <Section GenieDealer
       XLC="1/15" LC="1/15" MC="1/11" SC="1/9" XSC="1/7"
@@ -74,6 +75,7 @@ export const GenieDealerSection = ({section}) => {
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen
         loading='lazy'
+        id="iframe"
        />
       </Video>
     </Section>
