@@ -6,12 +6,12 @@ export const PageForm = ({XLargeRow, XLargeCol, LargeCol, LargeRow, MedRow, MedC
       XLC={XLargeCol} LC={LargeCol} MC={MedCol} SC={SmallCol} XSC={XSmallCol}
       XLR={XLargeRow} LR={LargeRow} MR={MedRow} SR={SmallRow} XSR={XSmallRow}
       name="contact"
-      method="post"
+      method="POST"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       autoComplete='on'
-      netlify
     >
+      <input type="hidden" name="form-name" value="contact"/>
       <label>
         <input placeholder='Full Name' type="text" required/>
       </label>
