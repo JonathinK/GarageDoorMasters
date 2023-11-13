@@ -134,13 +134,13 @@ export const Branding = styled.div`
 `
 //Logo and Company Name go here
 export const LogoWrapper = styled.div`
-  width: 96px;
+  width: 120px;
   @media ${({theme}) => theme.sizes.desktop}{
-    width: 96px;
+    width: 120px;
   }@media ${({theme}) => theme.sizes.largeTablet}{
-    width: 80px;
+    width:100px;
   }@media ${({theme}) => theme.sizes.tablet}{
-    width: 64px;
+    width: 80px;
   }@media ${({theme}) => theme.sizes.mobile}{
     width: 40px;
   }

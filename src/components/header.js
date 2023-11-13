@@ -31,7 +31,7 @@ const Header = () => {
       <NavLink to="/" title="Homepage" className="logo">
       <LogoWrapper scrolled={scrolled}>
           <StaticImage 
-            src="../images/Logo.png"
+            src="../images/Logo.webp"
             alt="Garage Door Masters Logo"
             placeholder="blurred"
             quality={50}

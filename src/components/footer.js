@@ -73,7 +73,7 @@ const Footer = () => {
       >
       <NavLink to="/" title='Homepage Link'>
         <StaticImage
-          src="../images/Logo.png"
+          src="../images/Logo.webp"
           alt="Garage Door Masters Logo"
           layout="fullWidth"
           quality={70}
