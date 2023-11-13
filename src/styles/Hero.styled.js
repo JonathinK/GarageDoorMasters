@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const HeroImage = styled.div`
-  min-height:100vh;
   position: relative;
   grid-row: 1 / 2;
-  
   :after{
     content: '';
     background:rgba(0,0,0,.4);
@@ -32,6 +30,5 @@ export const HeroImage = styled.div`
   }
   @media ${({theme}) => theme.sizes.mobile}{
     grid-column: 1 / 7;
-    min-height: 100vh;
   }
 `

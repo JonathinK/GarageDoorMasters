@@ -6,9 +6,10 @@ export const PageForm = ({XLargeRow, XLargeCol, LargeCol, LargeRow, MedRow, MedC
       XLC={XLargeCol} LC={LargeCol} MC={MedCol} SC={SmallCol} XSC={XSmallCol}
       XLR={XLargeRow} LR={LargeRow} MR={MedRow} SR={SmallRow} XSR={XSmallRow}
       name="contact"
-      method="POST"
+      method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
+      autoComplete='on'
       netlify
     >
       <label>
@@ -24,7 +25,7 @@ export const PageForm = ({XLargeRow, XLargeCol, LargeCol, LargeRow, MedRow, MedC
         <input placeholder='Address, Town, City, Zip Code' type="text" required/>
       </label>
       <textarea placeholder='Please type your concerns or service needed.'/>
-      <Button className='submit-text' secondary type="submit"> Submit </Button>
+      <Button className='submit-text' secondary type="submit"> Submit</Button>
     </FormWrapper>
   )
 }

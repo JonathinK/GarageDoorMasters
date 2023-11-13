@@ -66,14 +66,13 @@ export const query = graphql`
         backgroundImage {
           contentful_id
           gatsbyImageData(
-            placeholder: DOMINANT_COLOR
+            placeholder: BLURRED
             resizingBehavior: SCALE
             quality: 50
             layout: FULL_WIDTH
             cropFocus: CENTER
-            sizes: "(max-width: 720px) 100vw, (max-width: 1920px) 1920px, (min-width: 2560px) 2560px"
             breakpoints:[430,768,1024,1920]
-            formats: [WEBP,AUTO,AVIF]
+            formats: [WEBP,AUTO]
           )
         }
       }

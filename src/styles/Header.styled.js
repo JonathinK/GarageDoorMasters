@@ -135,7 +135,6 @@ export const Branding = styled.div`
 //Logo and Company Name go here
 export const LogoWrapper = styled.div`
   width: 96px;
-  
   @media ${({theme}) => theme.sizes.desktop}{
     width: 96px;
   }@media ${({theme}) => theme.sizes.largeTablet}{

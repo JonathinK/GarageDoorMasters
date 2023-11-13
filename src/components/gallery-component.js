@@ -118,11 +118,11 @@ fragment ImageGallery on ContentfulComponentSection{
               layout: FULL_WIDTH
               outputPixelDensities: 2
               placeholder: BLURRED
-              quality: 100
+              quality: 80
               resizingBehavior: SCALE
               formats: [WEBP,AUTO,AVIF]
               breakpoints: [430,768,1024,1920]
-             
+              sizes: "(max-width: 400px) 400px, 720px"
             )
           }
         }

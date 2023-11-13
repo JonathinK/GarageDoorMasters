@@ -48,7 +48,7 @@ export const query = graphql`
             jpegProgressive: true
             layout: FULL_WIDTH
             outputPixelDensities: 1.5
-            quality: 100
+            quality: 50
             placeholder: BLURRED
             resizingBehavior: SCALE
             sizes: "(max-width: 720px) 100vw, 1920px"

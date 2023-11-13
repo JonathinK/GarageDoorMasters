@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import '../fonts/fonts.css';
-import BackgroundImage from "../images/Background.png"
 
 export const GlobalStyles = createGlobalStyle`
   *{
@@ -21,7 +20,6 @@ export const GlobalStyles = createGlobalStyle`
     word-wrap: break-word;
     height: 100%;
     background-color: ${({theme}) => theme.colors.body};
-    background-image:url(${BackgroundImage});
     background-repeat: repeat;
     background-size: fit;
     background-position: center;      

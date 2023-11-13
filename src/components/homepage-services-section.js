@@ -53,7 +53,7 @@ export const HomepageServices = ({ section }) => {
             image={ResidentialImage}
             alt=""
             className="image-fit"
-            loading='lazy'
+            loading='eager'
           />
         </ImageWrapper>
         )}
@@ -113,7 +113,7 @@ export const HomepageServices = ({ section }) => {
             image={ResidentialImage}
             alt=""
             className="image-fit"
-            loading='lazy'
+            loading='eager'
           />
         </ImageWrapper>
         )}
@@ -189,16 +189,16 @@ export const query = graphql`
       slug
       image{
         gatsbyImageData(
-          aspectRatio: 2.5
+          aspectRatio: 1.5
           cropFocus: CENTER
           layout: FULL_WIDTH
-          quality: 100
-          outputPixelDensities: 1
+          quality: 20
+          outputPixelDensities: 2
           placeholder: BLURRED
           resizingBehavior: SCALE
           formats: [WEBP,AUTO,AVIF]
           breakpoints: [430,768,1024,1920]
-          sizes: "(max-width:720) 100vw, 736px"
+          sizes: "(max-width:400px) 400px, 736px"
         )
       }
     }

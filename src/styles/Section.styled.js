@@ -9,6 +9,9 @@ export const Section = styled.section`
     grid-template-rows:100vh;
     grid-template-columns: 1fr;
     overflow: hidden;
+    @media ${({theme}) => theme.sizes.mobile}{
+      grid-template-rows: 90vh;
+    }
   `}
   ${props => props.HomepageAbout && css`
     background: ${({theme}) => theme.colors.primaryblue};

@@ -9,6 +9,7 @@ export const Lightbox = ({selectedImage, closeModal}) => {
         <LightboxModal
           image={selectedImage.gatsbyImageData}
           closeModal={closeModal}
+          loading="eager"
         />
       )}
     </LightboxContainer>
