@@ -66,8 +66,6 @@ export const query = graphql`
         description
         cannonical
         keywords
-        no_index
-        no_follow
       }
       section{
         contentful_id
