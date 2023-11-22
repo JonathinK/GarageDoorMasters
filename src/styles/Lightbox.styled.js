@@ -27,8 +27,12 @@ export const LightBoxImage = styled.div`
   align-items:center;
   height:100%;
   width:90%;
-  max-width: 1300px;
+  max-width: 1000px;
   position:relative;
+
+  @media ${({theme}) => theme.sizes.mobile}{
+    max-width: 400px;
+  }
 `
 
 export const Close = styled.div`

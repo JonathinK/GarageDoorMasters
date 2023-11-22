@@ -114,15 +114,11 @@ fragment ImageGallery on ContentfulComponentSection{
             contentful_id
             gatsbyImageData(
               cropFocus: CENTER
-              jpegProgressive: false
               layout: FULL_WIDTH
-              outputPixelDensities: 2
               placeholder: BLURRED
-              quality: 80
+              quality: 100
               resizingBehavior: SCALE
-              formats: [WEBP,AUTO,AVIF]
-              breakpoints: [430,768,1024,1920]
-              sizes: "(max-width: 400px) 400px, 720px"
+              sizes: "(max-width: 450px) 200px, 1000px"
             )
           }
         }

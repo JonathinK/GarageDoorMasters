@@ -5,10 +5,8 @@ export const ImageGalleryWrapper = styled.div`
   grid-row: 1/2;
   height: auto;
   width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: stretch;
-  align-items: center;  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));  
   gap: 1em;
   position: relative;
 
@@ -17,8 +15,10 @@ export const ImageGalleryWrapper = styled.div`
   }
   @media ${({theme}) => theme.sizes.tablet}{
     grid-column: 2/8;
+    grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
   }
   @media ${({theme}) => theme.sizes.mobile}{
     grid-column: 2/6;
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
   }
 `
