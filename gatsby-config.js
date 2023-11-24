@@ -7,11 +7,11 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Garage Door Masters`,
+    title: `Garage Door Masters LLC`,
     description: `Garage Door Masters are your one stop shop for all of your Residential and Commercial garage door needs. From broken springs to new doors,"we do it all". We service monmouth and ocean counties`,
     author: `DiamondDigitalServices`,
-    siteUrl:`https://www.garagedoormastersllc.com/`,
-    canonical: `https://www.garagedoormastersllc.com/`,
+    siteUrl:`https://garagedoormastersllc.com/`,
+    canonical: `https://garagedoormastersllc.com/`,
     phone:`(732)-870-7313`,
     navigationLinks: [
       {name: "Residential", link:"/residential"},
