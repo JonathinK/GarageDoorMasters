@@ -23,7 +23,6 @@ const Footer = () => {
             name
             link
           }
-          bbbProof
         }
       }
     }
@@ -35,7 +34,6 @@ const Footer = () => {
   const contactEmail = data.site.siteMetadata.businessEmail;
   const siteAuthor = data.site.siteMetadata.author;
   const footerLinks = data.site.siteMetadata.navigationLinks;
-  const bbbLink = data.site.siteMetadata.bbbProof;
 
   
   return(
@@ -149,17 +147,6 @@ const Footer = () => {
 
     {/*BBB and credit card flex*/}
       <FooterFlex PaymentBBBFlex>
-        <ImageWrapper BBBImage>
-        <FooterLink href={bbbLink}>
-          <StaticImage
-            src="../images/bbb-rating.png"
-            alt='better business bureau rating A+'
-            layout="fullWidth"
-            placeholder='blurred'
-            quality={70}
-          />
-        </FooterLink>   
-        </ImageWrapper>
         <TextWrapper FlexCenter TextAlignCenter>
           <SubTitle variant="primary">We accept cash, check & all major credit cards</SubTitle>
           <ImageWrapper PaymentMethod>
